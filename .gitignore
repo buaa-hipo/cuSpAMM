@@ -1,0 +1,4 @@
+/data_cnn/*
+/data_decay/*
+/save_cluster/*
+*.csv
