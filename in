@@ -1,0 +1,110 @@
+exp
+INIT DONE--------------
+para: T=16384 Norm=100.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.058353s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=10.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.058473s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=1.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.058810s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=0.010000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.059360s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=0.000100 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.059299s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=0.000001 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.059541s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=0.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.059349s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=16384 Norm=0.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.059361s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=100.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.204231s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=10.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.203717s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=1.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.204797s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=0.010000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.205215s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=0.000100 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.205276s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=0.000001 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.205395s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=0.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.205343s
+single FP16
+
+
+exp
+INIT DONE--------------
+para: T=32768 Norm=0.000000 DEVICE=2 PARTS=1 alg=0 exp=1
+time=0.205397s
+single FP16

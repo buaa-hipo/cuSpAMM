@@ -1,0 +1,4 @@
+./run.sh: line 8: 21006 Segmentation fault      (core dumped) ./main
+single
+
+

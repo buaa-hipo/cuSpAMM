@@ -1,0 +1,3 @@
+nohup: ignoring input
+./run.sh: line 6: 28116 Terminated              ./main
+./run.sh: line 6:   392 Terminated              ./main
