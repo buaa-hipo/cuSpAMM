@@ -20,7 +20,7 @@
 #include "device_launch_parameters.h"
 // using namespace std;
 using namespace nvcuda;
-#define USINGHALF 1
+#define USINGHALF 0
 
 #if USINGHALF
 typedef half mytype;
@@ -29,12 +29,18 @@ typedef float mytype;
 #endif
 
 #define LoNum 32 //32的倍数
-const float Norm = -1;
+
+const double NormINIT=0;
+#define TUNINGFLAG 1
+const double ExpectedRate = 0.75; 
+#define TUNINGTIME 10
+#define TUNINGERROR 0.01
+
 #define TESTTIME 1
 #define WARMUP 0
-#define inM 13656
-#define inK 13656
-#define inN 13656
+#define inM 64
+#define inK 576
+#define inN 102400
 #define T 32
 #define DEVICEDIM 1
 #define PART 1
@@ -55,8 +61,8 @@ const float E = 1e-6;
 #define PINMEM 0  //变慢了，不使用锁内存
 #define TEXTURE 0 //显示使用纹理，变慢了
 
-#define CNN 0
-#define DECAY 1
+#define CNN 1
+#define DECAY 0
 #define MATRIXNOR 0
 #define MATRIXEXP 0
 #define MATRIXALG 0
@@ -81,6 +87,7 @@ const std::string FILENAMEB="data_cnn/conv_X_col.csv(576, 102400).csv";
 // #define CDIVIDE 0 //每个kernel负责几个块
 const int CBLMUN = K/LoNum;
 const int CBDIM = LoNum * LoNum;
+extern float Norm;
 
 
 #define GIVE_NUMBER21(dst, src, m, n)                                          \
@@ -142,6 +149,7 @@ void check_simple_matrix_mul(float *in_A, float *in_B, float *in_C);
 void check_simple_gpu(mytype *A, mytype *B, float *in_C);
 void run_cublas_time(mytype *A, mytype *B);
 void countValid(float *A_normmap, float *B_normmap);
+float tuneValidRate(float *A_normmap, float *B_normmap,int m,int n);
 void checkNormMap(float *in_A, float *A_normmap);
 
 void getMatrixFromCSV(mytype* A,int m,int n,std::string filename);

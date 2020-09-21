@@ -1,4 +1,5 @@
 #include "main.h"
+extern float Norm;
 
 #define COUNTERRTRANS(A,B,m,n) \
 float ef=0;\
@@ -392,6 +393,60 @@ void getDecayMatrixAlg(mytype* A,float c,float v,int m,int n){
     }
 }
 
+float tuneValidRate(float *A_normmap, float *B_normmap,int m,int n){
+    // printf("*** tuning valid, expected=%f ***\n",ExpectedRate);
+    int count=0;
+    double norm,ave=0,validRate=0,up=0,down=0,Norm=0;
+    int totalNum=(M/LoNum)*(N/LoNum)*(K/LoNum);
+    int validC[M/LoNum][N/LoNum];
+    //直接变成非递归 小块乘
+    for(int Ti=0;Ti<TUNINGTIME;Ti++){
+        count=0;
+        ave=0;
+        for(int Ci=0;Ci<M/LoNum;Ci++){
+            for(int Cj=0;Cj<N/LoNum;Cj++){
+                //计算小块C[Ci,Cj]的结果
+                //遍历A,B小块
+                validC[Ci][Cj]=0;
+                for(int Ki=0;Ki<K/LoNum;Ki++){
+                    //计算范数乘 小块A[Ci,Ki]和B[Ki,Cj]
+                    norm = GETELEMENT21(A_normmap,Ci,Ki,K/LoNum)*GETELEMENT21(B_normmap,Ki,Cj,N/LoNum);
+                    ave+=norm;
+                    if(norm>=Norm){
+                        count++;
+                        validC[Ci][Cj]++;
+                    }
+                }
+            }
+        }
+        validRate=(float)count/totalNum;
+        // printf("Ti=%d Norm=%f validrate=%f down=%f up=%f",Ti,Norm,validRate,down,up);
+        if(abs(validRate-ExpectedRate)<TUNINGERROR) break;
+        if(Ti==0){
+            Norm = ave/totalNum;
+            up=Norm;
+            printf("\n");
+            continue;
+        }
+        if(validRate>ExpectedRate){
+            // printf(" now>exp ");
+            if(up == Norm) up*=2;
+            down=Norm;
+            Norm = (Norm+up)/2;
+            
+        }
+        else{
+            // printf(" now<exp ");
+            up=Norm;
+            Norm = (Norm+down)/2;
+        }
+        // printf("==> down=%f up=%f\n",down,up);
+    }
+    // printf("tuning result: valid mul=%d, simple mul=%d, rate=%f%% aveNorm=%f\n",count,totalNum,(float)count/totalNum*100,ave/totalNum);
+    return (float)Norm;
+
+}
+
 //计算有效块乘的个数
 void countValid(float* A_normmap,float* B_normmap){
     printf("***counting valid***\n");
@@ -410,9 +465,10 @@ void countValid(float* A_normmap,float* B_normmap){
                 // printf("%f\n",GETELEMENT21(A_normmap,Ci,Ki,K/LoNum));
                 norm = GETELEMENT21(A_normmap,Ci,Ki,K/LoNum)*GETELEMENT21(B_normmap,Ki,Cj,N/LoNum);
                 ave+=norm;
+                // printf("%f\n",norm);
                 // printf("%f\n",GETELEMENT21(B_normmap,Ki,Cj,N/LoNum));
                 // printf("norm=%f Norm=%f\n",norm,Norm);
-                if(norm>Norm){
+                if(norm>=Norm){
                     count++;
                     validC[Ci][Cj]++;
                 }
@@ -443,6 +499,22 @@ void countValid(float* A_normmap,float* B_normmap){
     //     }
     // }
     // outfile.close();
+
+    //输出X_col的norm map
+    std::ofstream outfile;
+    outfile.open("X_col.csv");
+    for(int i=0;i<K/LoNum;i++){
+        for(int j=0;j<N/LoNum;j++){
+            outfile<<GETELEMENT21(B_normmap,i,j,N/LoNum);
+            if(j==N/LoNum-1){
+                outfile<<std::endl;
+            }
+            else{
+                outfile<<",";
+            }
+        }
+    }
+    outfile.close();
 }
 
 //测试范数,有错不能用

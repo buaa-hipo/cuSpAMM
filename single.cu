@@ -1,5 +1,6 @@
 
 #include "main.h"
+float Norm;
 
 //Mutiple-GPU Plan Structure
 typedef struct
@@ -143,7 +144,7 @@ __global__ void unroll_get_Fnorm_FP16(const half* __restrict__ A,float *A_normma
 
 //每个kernel计算C[LoNum,LoNum]
 //静态无分配版本，每个线程一个元素进行计算，LoNum*LoNum个线程
-__global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const float* __restrict__ A_normmap,const float* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset){
+__global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const float* __restrict__ A_normmap,const float* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset,float Norm){
     int id = blockIdx.x * blockDim.x + threadIdx.x;
     int kId = blockIdx.x;//kernel
     int thId = threadIdx.x;
@@ -277,7 +278,7 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
 }
 
 //4个warp，计算32*32 (4个warp 4*32个线程)
-__global__ void get_C_FP16_B32(const half* __restrict__ A,const float* __restrict__ A_normmap,const half* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset){
+__global__ void get_C_FP16_B32(const half* __restrict__ A,const float* __restrict__ A_normmap,const half* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset,float Norm){
     const int id = blockIdx.x * blockDim.x + threadIdx.x;
     const int kId = blockIdx.x;
     const int thId = threadIdx.x;
@@ -308,7 +309,7 @@ __global__ void get_C_FP16_B32(const half* __restrict__ A,const float* __restric
     for(int i=thId;i<REDUCECBL;i+=blockDim.x){
         if(i<(CBLMUN)){
             norm_mul = GETELEMENT21(A_normmap,myBlockRow,i,K/LoNum) * GETELEMENT21(B_normmap,i,myBlockCol,N/LoNum);
-            sC_bitmap[i] = norm_mul>Norm? 1:0; //!范数计算有E的浮动误差，应该是6位有效数字
+            sC_bitmap[i] = norm_mul>=Norm? 1:0; //!范数计算有E的浮动误差，应该是6位有效数字
         }
         else{
             sC_bitmap[i] = 0;
@@ -492,7 +493,6 @@ int main(int argc, char **argv){
             int A_blocks = M*K/(LoNum*LoNum),B_blocks = (K*N)/(LoNum*LoNum),F_threads = LoNum*LoNum;
             for(int p=0;p<PART;p++){
                 #if !USINGHALF
-                // unroll_get_Fnorm<<<B_blocks/PART,F_threads/8,0,plan[device].stream>>>(plan[device].h_B,plan[device].B_normmap,M,K,p*partBlockOffset);
                 if(LoNum==32){
                     unroll_get_Fnorm_pri<<<B_blocks/PART,F_threads/8,0,plan[device].stream>>>(plan[device].h_B,plan[device].B_normmap,K,N,p*partBlockOffset);
                 }
@@ -500,7 +500,6 @@ int main(int argc, char **argv){
 
                 }
                 
-                // if(p!=PART-1) cudaStreamSynchronize(plan[device].stream);
                 #else
                 if(LoNum==32){
                     unroll_get_Fnorm_FP16<<<B_blocks/PART,32*4,0,plan[device].stream>>>(plan[device].h_B,plan[device].B_normmap,K,N,p*partBlockOffset);
@@ -520,7 +519,6 @@ int main(int argc, char **argv){
             for(int p=0;p<PART;p++){
                 #if !USINGHALF
                 if(LoNum==32){
-                    // unroll_get_Fnorm<<<A_blocks/DEVICEDIM/PART,F_threads/8,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,M,K,device*(T/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
                     unroll_get_Fnorm_pri<<<A_blocks/DEVICEDIM/PART,F_threads/8,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,M,K,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
                 }
                 else{
@@ -538,9 +536,15 @@ int main(int argc, char **argv){
 
                 cudaStreamSynchronize(plan[device].stream);
 
+                #if TUNINGFLAG
+                Norm = tuneValidRate(plan[device].A_normmap,plan[device].B_normmap,M/DEVICEDIM/PART,N);
+                #else
+                Norm = NormINIT;
+                #endif
+
                 #if !USINGHALF
                 if(LoNum==32){
-                    get_C_Threads1Element_Mul<<<C_blocks/DEVICEDIM/PART,C_threads,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,plan[device].h_B,plan[device].B_normmap,plan[device].h_C,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
+                    get_C_Threads1Element_Mul<<<C_blocks/DEVICEDIM/PART,C_threads,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,plan[device].h_B,plan[device].B_normmap,plan[device].h_C,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM),Norm);
                 }
                 else{
 
@@ -548,7 +552,7 @@ int main(int argc, char **argv){
                 
                 #else
                 if(LoNum==32){
-                    get_C_FP16_B32<<<C_blocks/DEVICEDIM/PART,32*4,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,plan[device].h_B,plan[device].B_normmap,plan[device].h_C,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
+                    get_C_FP16_B32<<<C_blocks/DEVICEDIM/PART,32*4,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,plan[device].h_B,plan[device].B_normmap,plan[device].h_C,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM),Norm);
                 }
                 else{
 
