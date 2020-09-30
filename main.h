@@ -1,5 +1,6 @@
 
 #include "para.h"
+#include <omp.h>
 #include <assert.h>
 #include <cublas_v2.h>
 #include <cuda.h>
@@ -20,7 +21,7 @@
 #include "device_launch_parameters.h"
 // using namespace std;
 using namespace nvcuda;
-#define USINGHALF 0
+// #define USINGHALF 0
 
 #if USINGHALF
 typedef half mytype;
@@ -30,25 +31,25 @@ typedef float mytype;
 
 #define LoNum 32 //32的倍数
 
-const double NormINIT=0;
-#define TUNINGFLAG 1
+// const double NormINIT=0;
+#define TUNINGFLAG 0
 const double ExpectedRate = 0.75; 
-#define TUNINGTIME 10
+#define TUNINGTIME 20
 #define TUNINGERROR 0.01
 
-#define TESTTIME 1
-#define WARMUP 0
-#define inM 64
-#define inK 576
-#define inN 102400
+// #define TESTTIME 1
+// #define WARMUP 0
+// const int inM=1<<15;
+// const int inK=1<<15;
+// const int inN=1<<15;
 #define T 32
-#define DEVICEDIM 1
+// #define DEVICEDIM 2
 #define PART 1
 #define CHECK 1
 #define TRUNCATIONNUM 0.030
 
 #define SpAMM 1
-#define CUBLAS 1
+#define CUBLAS 0
 
 const int M = ((inM-1)/LoNum+1) * LoNum;
 const int K = ((inK-1)/LoNum+1) * LoNum;
@@ -61,11 +62,11 @@ const float E = 1e-6;
 #define PINMEM 0  //变慢了，不使用锁内存
 #define TEXTURE 0 //显示使用纹理，变慢了
 
-#define CNN 1
+#define CNN 0
 #define DECAY 0
 #define MATRIXNOR 0
 #define MATRIXEXP 0
-#define MATRIXALG 0
+#define MATRIXALG 1
 
 #if DECAY
 const std::string FILENAMEA="data_decay/13656_1.mtx";
