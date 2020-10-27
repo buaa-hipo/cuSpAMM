@@ -2,3 +2,16 @@
 single
 
 
+para.h(2): error: expected a ";"
+
+1 error detected in the compilation of "/tmp/tmpxft_0000232b_00000000-12_tool.cpp1.ii".
+para.h(2): error: expected a ";"
+
+1 error detected in the compilation of "/tmp/tmpxft_000025d1_00000000-12_tool.cpp1.ii".
+para.h(2): error: expected a ";"
+
+1 error detected in the compilation of "/tmp/tmpxft_00002617_00000000-12_tool.cpp1.ii".
+Traceback (most recent call last):
+  File "test_withoutTC.py", line 31, in <module>
+    norm=normlist[eno][dimno]
+IndexError: list index out of range

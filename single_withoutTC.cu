@@ -18,7 +18,7 @@ for(int i=0;i<size_row;i++){ \
     } \
 }
 
-__global__ void unroll_get_Fnorm_pri(const float* __restrict__ A,float *A_normmap,int m,int n,int blockRowOff){
+__global__ void unroll_get_Fnorm_pri_FP16(const half* __restrict__ A,float *A_normmap,int m,int n,int blockRowOff){
     int id = blockIdx.x * blockDim.x + threadIdx.x;
     int kId = blockIdx.x;//kernel
     int thId = threadIdx.x;
@@ -38,15 +38,16 @@ __global__ void unroll_get_Fnorm_pri(const float* __restrict__ A,float *A_normma
     valid = id > m*n? 0:1;
     if(valid){
         int tadd = myFinalRow*n+myFinalCol;
-        float t1 = A[tadd];
-        float t2 = A[tadd+1];
-        float t3 = A[tadd+2];
-        float t4 = A[tadd+3];
-        float t5 = A[tadd+4];
-        float t6 = A[tadd+5];
-        float t7 = A[tadd+6];
-        float t8 = A[tadd+7];
-        val = t1*t1+t2*t2+t3*t3+t4*t4+t5*t5+t6*t6+t7*t7+t8*t8;
+        const half t1 = A[tadd];
+        const half t2 = A[tadd+1];
+        const half t3 = A[tadd+2];
+        const half t4 = A[tadd+3];
+        const half t5 = A[tadd+4];
+        const half t6 = A[tadd+5];
+        const half t7 = A[tadd+6];
+        const half t8 = A[tadd+7];
+        const half t11 = __hmul(t1,t1);
+        // val = t1*t1+t2*t2+t3*t3+t4*t4+t5*t5+t6*t6+t7*t7+t8*t8;
     } 
     
     #define FULL_MASK 0xffffffff
@@ -76,75 +77,10 @@ __global__ void unroll_get_Fnorm_pri(const float* __restrict__ A,float *A_normma
     } 
 }
 
-//4*32
-__global__ void unroll_get_Fnorm_FP16(const half* __restrict__ A,float *A_normmap,int m,int n,int blockRowOff){
-    int id = blockIdx.x * blockDim.x + threadIdx.x;
-    int kId = blockIdx.x;//kernel
-    int thId = threadIdx.x;
-    int warpId = thId / 32;
-
-    const int myBlockRow = kId / (n/LoNum)+blockRowOff;
-    const int myBlockCol = kId % (n/LoNum);
-    const int myBlockId = myBlockRow*(n/LoNum)+myBlockCol;
-    
-    wmma::fragment<wmma::matrix_a, 16, 16, 16, half, wmma::row_major> a_frag;
-    wmma::fragment<wmma::matrix_b, 16, 16, 16, half, wmma::row_major> b_frag;
-    wmma::fragment<wmma::accumulator, 16, 16, 16, half> chalf_frag;
-    wmma::fragment<wmma::accumulator, 16, 16, 16, float> c_frag;
-    
-    __shared__ half sdata_half[32*32];
-    __shared__ float sdata_float[4];
-    
-    //要算32*32的范数和,块坐标(myBlockRow,myBlockCol)，每个warp算16*16
-    int warpi=warpId/2;
-    int warpj=warpId%2;
-    
-    //setFragment(A, 1.0);
-    // setFragment(C, 0.0);
-    // loadMatrix(B, X+offset);//+矩阵元素平方操作
-    // MMA(C, A, B, C);
-    wmma::fill_fragment(a_frag, 1.0f);
-    wmma::fill_fragment(chalf_frag, 0.0f);
-    wmma::load_matrix_sync(b_frag, GETOFF21(A,myBlockRow*LoNum+warpi*16,myBlockCol*LoNum+warpj*16,n), n);
-    for (int i = 0; i < b_frag.num_elements; i++) {
-        half t=b_frag.x[i];
-        b_frag.x[i] = __float2half(__half2float(t) * __half2float(t));
-    }
-    wmma::mma_sync(chalf_frag, a_frag, b_frag, chalf_frag);
-    // copyFromTo(C, A);
-    wmma::store_matrix_sync(GETOFF21(sdata_half,warpi*16,warpj*16,32), chalf_frag, 32,wmma::mem_row_major);
-    __syncthreads();
-    
-    wmma::load_matrix_sync(a_frag, GETOFF21(sdata_half,warpi*16,warpj*16,32), 32);
-    
-    // for (int i = 0; i < a_frag.num_elements; i++) {
-    //     // if(warpId==3) printf("thid=%d %f\n",thId,__half2float(a_frag.x[i]));
-    // }
-
-    // // setFrament(B, 1.0);
-    // // setFrament(C, 0.0);
-    // // MMA(C, A, B, C);
-    wmma::fill_fragment(b_frag, 1.0f);
-    wmma::fill_fragment(c_frag, 0.0f);
-    wmma::mma_sync(c_frag, a_frag, b_frag, c_frag);
- 
-    __syncthreads();
-    if(thId%32==0){
-        sdata_float[warpId]=c_frag.x[0];
-    }
-    __syncthreads();
-    if(thId==0){
-        // for(int i=0;i<4;i++){
-        //     printf("kid=%d i=%d %f\n",kId,i,sdata_float[i]);
-        // }
-        A_normmap[myBlockId]=sqrt(sdata_float[0]+sdata_float[1]+sdata_float[2]+sdata_float[3]);
-        // printf("unsqrt, %d %f\n",kId,sdata_float[0]+sdata_float[1]+sdata_float[2]+sdata_float[3]);
-    }
-}
 
 //每个kernel计算C[LoNum,LoNum]
 //静态无分配版本，每个线程一个元素进行计算，LoNum*LoNum个线程
-__global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const float* __restrict__ A_normmap,const float* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset,float Norm){
+__global__ void get_C_Threads1Element_Mul_FP16(const half* __restrict__ A,const float* __restrict__ A_normmap,const half* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset,float Norm){
     int id = blockIdx.x * blockDim.x + threadIdx.x;
     int kId = blockIdx.x;//kernel
     int thId = threadIdx.x;
@@ -153,10 +89,11 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
     __shared__ int sC_bitmap[CBLMUN*2];//share mem需要初始化！！
     // __shared__ int sC_bitmap_debug[CBLMUN];
     __shared__ int sC_offset[CBLMUN];
-    __shared__ float sA0[LoNum*LoNum],sB0[LoNum*LoNum]; //sC可以换成局部变量，但有local的风险
-    __shared__ float sA1[LoNum*LoNum],sB1[LoNum*LoNum]; 
+    __shared__ half sA0[LoNum*LoNum],sB0[LoNum*LoNum]; //sC可以换成局部变量，但有local的风险
+    __shared__ half sA1[LoNum*LoNum],sB1[LoNum*LoNum]; 
 
-    float norm_mul,myCresult=0.0f;
+    float norm_mul;
+    half myCresult=__float2half(0.0f);
     const int myBlockRow = kId / (N/LoNum) + main_row_offset; 
     const int myBlockCol = kId % (N/LoNum); //负责计算块坐标C[Brow,Bcol]处的块
     const int myBlockRowOff = myBlockRow*LoNum;
@@ -174,7 +111,7 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
     // 需要A_norm第R行，B_norm第C列
     #pragma unroll
     for(int i=thId;i<REDUCECBL;i+=blockDim.x){
-        if(thId<(CBLMUN)){
+        if(i<(CBLMUN)){
             norm_mul = GETELEMENT21(A_normmap,myBlockRow,i,K/LoNum) * GETELEMENT21(B_normmap,i,myBlockCol,N/LoNum);
             sC_bitmap[i] = norm_mul>Norm? 1:0; //!范数计算有E的浮动误差，应该是6位有效数字
         }
@@ -184,17 +121,6 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
     }
     __syncthreads();//不能和下面合并！因为有的线程的b可能没算完就结束了，但是非常费时间
 
-    // if(thId==0){
-    //     curandState state;
-    //     for(int i=0;i<CBL;i++){
-    //         curand_init(thId, i, 0, &state);
-    //         unsigned int x = curand(&state)%2;
-    //         // if(x%2==0) sC_bitmap[i]=1;
-    //         // else sC_bitmap[i]=0;
-    //         sC_bitmap[i]=1;
-    //         // printf("%d ",sC_bitmap[i]);
-    //     }
-    // }
 
     for(int i=thId;i<CBLMUN;i+=blockDim.x){
         if(sC_bitmap[i]==1){
@@ -209,7 +135,7 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
     }
     __syncthreads();
 
-    //reduce算一共有几个非零值,reduce版本只能处理小规模且为2的幂
+    // //reduce算一共有几个非零值,reduce版本只能处理小规模且为2的幂
     for (unsigned int s = REDUCECBL/2; s > 0; s >>= 1) {
 		if (thId < s) {
 			sC_bitmap[thId] += sC_bitmap[thId + s];
@@ -231,10 +157,10 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
         sB0[thId] = GETELEMENT21(B,this_b*LoNum+myThreadRow,myFinalCol,N);
         // if(kId==1&&thId==0) printf("read %d %d\n",myFinalRow,this_b*LoNum+myThreadCol); 
     }
-    float * A_this_read=sA0;
-    float * B_this_read=sB0;
-    float * A_this_write=sA1;
-    float * B_this_write=sB1;
+    half * A_this_read=sA0;
+    half * B_this_read=sB0;
+    half * A_this_write=sA1;
+    half * B_this_write=sB1;
     #pragma unroll 
     for(int i=0;i<validNum;i++){
         __syncthreads(); 
@@ -249,12 +175,15 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
         }
         
         //矩阵小块(LoNum,LoNum)乘 每个线程算C内[thId/L,thId%L]处的最后值
-        float* mysA = &GETELEMENT21(A_this_read,myThreadRow,0,LoNum);//sA第myTR行，sB第myTC列
-        float* mysB = &GETELEMENT21(B_this_read,0,myThreadCol,LoNum);
+        half* mysA = &GETELEMENT21(A_this_read,myThreadRow,0,LoNum);//sA第myTR行，sB第myTC列
+        half* mysB = &GETELEMENT21(B_this_read,0,myThreadCol,LoNum);
         
         #pragma unroll
         for(int i=0;i<LoNum;i++){ //极慢，三倍
-            myCresult += *(mysA+i) * *(mysB+i*LoNum); 
+            // myCresult += *(mysA+i) * *(mysB+i*LoNum); 
+            const __half a = *(mysA+i);
+            const __half b = *(mysB+i*LoNum);
+            myCresult +=__hmul(a,b);
             // if(myFinalRow==1186&&myFinalCol==1183){
             //     printf("kid=%d thid=%d b=%d %f %f %f\n",kId,thId,this_b,myCresult,A[1186*K+i],B[i*N+1183]);
             // } 
@@ -277,132 +206,6 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
     GETELEMENT21(C,myFinalRow,myFinalCol,N) = myCresult;
 }
 
-//4个warp，计算32*32 (4个warp 4*32个线程)
-__global__ void get_C_FP16_B32(const half* __restrict__ A,const float* __restrict__ A_normmap,const half* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset,float Norm){
-    const int id = blockIdx.x * blockDim.x + threadIdx.x;
-    const int kId = blockIdx.x;
-    const int thId = threadIdx.x;
-    const int warpId = thId/32;
-    int REDUCECBL = 1<<(int)(log2(CBLMUN*1.0)+1);
-
-    __shared__ int sC_bitmap[(CBLMUN/4+1)*4*2]; //四字节对齐
-    __shared__ int sC_offset[(CBLMUN/4+1)*4];
-    __shared__ half st[LoNum*LoNum];
-    __shared__ half sA0[LoNum*LoNum],sB0[LoNum*LoNum]; 
-    __shared__ half sA1[LoNum*LoNum],sB1[LoNum*LoNum]; 
-
-    float norm_mul,myCresult=0.0f;
-    const int myBlockRow = kId / (N/LoNum) + main_row_offset; 
-    const int myBlockCol = kId % (N/LoNum); //负责计算块坐标C[Brow,Bcol]处的块
-    const int myBlockRowOff = myBlockRow*LoNum;
-    const int myBlockColOff = myBlockCol*LoNum;
-    
-    wmma::fragment<wmma::matrix_a, 16, 16, 16, half, wmma::row_major> a0_frag;
-    wmma::fragment<wmma::matrix_b, 16, 16, 16, half, wmma::row_major> b0_frag;
-    wmma::fragment<wmma::matrix_a, 16, 16, 16, half, wmma::row_major> a1_frag;
-    wmma::fragment<wmma::matrix_b, 16, 16, 16, half, wmma::row_major> b1_frag;
-    wmma::fragment<wmma::accumulator, 16, 16, 16, float> c_frag;
-    wmma::fill_fragment(c_frag, 0.0f);
-    
-    //需要A_norm第R行，B_norm第C列
-    #pragma unroll
-    for(int i=thId;i<REDUCECBL;i+=blockDim.x){
-        if(i<(CBLMUN)){
-            norm_mul = GETELEMENT21(A_normmap,myBlockRow,i,K/LoNum) * GETELEMENT21(B_normmap,i,myBlockCol,N/LoNum);
-            sC_bitmap[i] = norm_mul>=Norm? 1:0; //!范数计算有E的浮动误差，应该是6位有效数字
-        }
-        else{
-            sC_bitmap[i] = 0;
-        }
-    }
-    __syncthreads();
-
-    // reduce
-    for(int i=thId;i<CBLMUN;i+=blockDim.x){
-        if(sC_bitmap[i]==1){
-            int t=0;
-            for(int j=0;j<i;j++){
-                if(sC_bitmap[j]==1){
-                    t++;
-                }
-            }
-            sC_offset[t]=i;
-        }
-    }
-    __syncthreads();
-    //reduce算一共有几个非零值
-    for (unsigned int s = REDUCECBL / 2; s > 0; s >>= 1) {
-		if (thId < s) {
-			sC_bitmap[thId] += sC_bitmap[thId + s];
-		}
-		__syncthreads();
-    }
-    const int validNum = sC_bitmap[0]; 
-    
-    const int warpi=warpId/2;
-    const int warpj=warpId%2;
-    const int myFinalRow16 = myBlockRow*2+warpi;
-    const int myFinalCol16 = myBlockCol*2+warpj;
-
-    int this_b,next_b;
-    half * A_this_read=sA0;
-    half * B_this_read=sB0;
-    half * A_this_write=sA1;
-    half * B_this_write=sB1;
-    const int inWarpi = thId % 32 / 4 + warpId*8;
-    const int inWarpj = (thId % 32 % 4)*8;
-    if(validNum>0){
-        this_b=sC_offset[0];
-        // 4*32线程并行加载32*32的A，B，每个warp 8行
-        #pragma unroll
-        for(int line=warpId*8;line<(warpId+1)*8;line++){
-            GETELEMENT21(A_this_read,line,thId%32,LoNum) = GETELEMENT21(A,myBlockRowOff+line,this_b*LoNum+thId%32,K);
-            GETELEMENT21(B_this_read,line,thId%32,LoNum) = GETELEMENT21(B,this_b*LoNum+line,myBlockColOff+thId%32,N);
-        }
-    }
-
-    //遍历bitmap,每个线程负责一个位置的元素
-    #pragma unroll 
-    for(int i=0;i<validNum;i++){
-        __syncthreads();
-        this_b = sC_offset[i];
-        if(i+1<validNum){
-            next_b = sC_offset[i+1];
-            #pragma unroll
-            for(int line=warpId*8;line<(warpId+1)*8;line++){
-                GETELEMENT21(A_this_write,line,thId%32,LoNum) = GETELEMENT21(A,myBlockRowOff+line,next_b*LoNum+thId%32,K);
-                GETELEMENT21(B_this_write,line,thId%32,LoNum) = GETELEMENT21(B,next_b*LoNum+line,myBlockColOff+thId%32,N);
-            }
-        }
-        
-        // for(int k=0;k<2;k++){
-        //     // wmma::load_matrix_sync(a_frag, GETOFF21(A_this_read,warpi*16,k*16,LoNum), LoNum);
-        //     // wmma::load_matrix_sync(b_frag, GETOFF21(B_this_read,k*16,warpj*16,LoNum), LoNum);
-        //     // wmma::mma_sync(c_frag, a_frag, b_frag, c_frag);
-        // }
-        wmma::load_matrix_sync(a0_frag, GETOFF21(A_this_read,warpi*16,0*16,LoNum), LoNum);
-        wmma::load_matrix_sync(b0_frag, GETOFF21(B_this_read,0*16,warpj*16,LoNum), LoNum);
-        wmma::load_matrix_sync(a1_frag, GETOFF21(A_this_read,warpi*16,1*16,LoNum), LoNum);
-        wmma::load_matrix_sync(b1_frag, GETOFF21(B_this_read,1*16,warpj*16,LoNum), LoNum);
-        wmma::mma_sync(c_frag, a0_frag, b0_frag, c_frag);
-        wmma::mma_sync(c_frag, a1_frag, b1_frag, c_frag);
-
-        if(i%2==0){
-            A_this_read=sA1;
-            B_this_read=sB1;
-            A_this_write=sA0;
-            B_this_write=sB0;
-        }
-        else{
-            A_this_read=sA0;
-            B_this_read=sB0;
-            A_this_write=sA1;
-            B_this_write=sB1;
-        }
-    }
-
-    wmma::store_matrix_sync(GETOFF21(C,myFinalRow16*16,myFinalCol16*16,N), c_frag, N,wmma::mem_row_major);
-}
 
 
 int main(int argc, char **argv){
@@ -503,7 +306,7 @@ int main(int argc, char **argv){
                 
                 #else
                 if(LoNum==32){
-                    unroll_get_Fnorm_FP16<<<B_blocks/PART,32*4,0,plan[device].stream>>>(plan[device].h_B,plan[device].B_normmap,K,N,p*partBlockOffset);
+                    unroll_get_Fnorm_pri_FP16<<<B_blocks/PART,F_threads/8,0,plan[device].stream>>>(plan[device].h_B,plan[device].B_normmap,K,N,p*partBlockOffset);
                 }
                 else{
 
@@ -528,7 +331,7 @@ int main(int argc, char **argv){
                 
                 #else
                 if(LoNum==32){
-                    unroll_get_Fnorm_FP16<<<A_blocks/DEVICEDIM/PART,32*4,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,M,K,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
+                    unroll_get_Fnorm_pri_FP16<<<A_blocks/DEVICEDIM/PART,32*4,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,M,K,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
                 }
                 else{
 
@@ -553,7 +356,7 @@ int main(int argc, char **argv){
                 
                 #else
                 if(LoNum==32){
-                    get_C_FP16_B32<<<C_blocks/DEVICEDIM/PART,32*4,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,plan[device].h_B,plan[device].B_normmap,plan[device].h_C,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM),Norm);
+                    get_C_Threads1Element_Mul_FP16<<<C_blocks/DEVICEDIM/PART,C_threads,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,plan[device].h_B,plan[device].B_normmap,plan[device].h_C,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM),Norm);
                 }
                 else{
 

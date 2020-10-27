@@ -296,8 +296,9 @@ void getMatrixFromCSV(mytype* A,int m,int n,std::string filename){
     std::ifstream finA(filename);
     std::string line;
     int i=0;
+    // printf("%d %d\n",m,n);
     while (getline(finA, line)){
-        // std::cout << "原始字符串: " << line << std::endl; 
+        // if(filename==FILENAMEB) std::cout << "原始字符串: " << line << std::endl; 
         std::istringstream sin(line);
         std::vector<std::string> Waypoints;
         std::string info;
@@ -308,17 +309,22 @@ void getMatrixFromCSV(mytype* A,int m,int n,std::string filename){
         for(int j=0;j<Waypoints.size();j++){
             std::stringstream sx;
             std::string x_str;
-            double x;
+            float x;
             x_str = Waypoints[j];
             sx << x_str;
             sx >> x;
+            
             #if !USINGHALF
-            A[i*K+j] = x;
+            A[i*n+j] = x;
             #else
-            A[i*K+j] = __float2half(x);
+            A[i*n+j] = __float2half(x);
             #endif
         }
+        
         i++;
+        
+        if(i>=m) break;
+        
     }
     // MATRIXSHOW21D(A,M,K);
 }
@@ -425,7 +431,7 @@ float tuneValidRate(float *A_normmap, float *B_normmap,int m,int n){
         if(Ti==0){
             Norm = ave/totalNum;
             up=Norm;
-            printf("\n");
+            // printf("\n");
             continue;
         }
         if(validRate>ExpectedRate){
@@ -501,20 +507,20 @@ void countValid(float* A_normmap,float* B_normmap){
     // outfile.close();
 
     //输出X_col的norm map
-    std::ofstream outfile;
-    outfile.open("X_col.csv");
-    for(int i=0;i<K/LoNum;i++){
-        for(int j=0;j<N/LoNum;j++){
-            outfile<<GETELEMENT21(B_normmap,i,j,N/LoNum);
-            if(j==N/LoNum-1){
-                outfile<<std::endl;
-            }
-            else{
-                outfile<<",";
-            }
-        }
-    }
-    outfile.close();
+    // std::ofstream outfile;
+    // outfile.open("X_col.csv");
+    // for(int i=0;i<K/LoNum;i++){
+    //     for(int j=0;j<N/LoNum;j++){
+    //         outfile<<GETELEMENT21(B_normmap,i,j,N/LoNum);
+    //         if(j==N/LoNum-1){
+    //             outfile<<std::endl;
+    //         }
+    //         else{
+    //             outfile<<",";
+    //         }
+    //     }
+    // }
+    // outfile.close();
 }
 
 //测试范数,有错不能用

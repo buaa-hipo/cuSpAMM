@@ -1,5 +1,5 @@
 #name=baseline
-name=single
+name=single_withoutTC
 #nvcc -O3 -o main tool.cu $name.cu -w -arch sm_70 
 nvcc -O3 -o main tool.cu $name.cu -w -arch sm_70  -lcublas --std=c++11 
 # cuda-memcheck main

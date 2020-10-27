@@ -1,0 +1,2305 @@
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.358727 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000159s
+***GPU ERROR checking***
+EF=678.085388 CF=1435.367554 C'F=791.014160
+***counting valid***
+valid mul=16540, simple mul=32768, rate=50.476074% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.358727 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000095s
+***GPU ERROR checking***
+EF=678.085388 CF=1435.367554 C'F=791.014160
+***counting valid***
+valid mul=16540, simple mul=32768, rate=50.476074% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.358727 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000078s
+***GPU ERROR checking***
+EF=678.085388 CF=1435.367554 C'F=791.014160
+***counting valid***
+valid mul=16540, simple mul=32768, rate=50.476074% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.358727 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000067s
+***GPU ERROR checking***
+EF=678.085388 CF=1435.367554 C'F=791.014160
+***counting valid***
+valid mul=16540, simple mul=32768, rate=50.476074% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.391336 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000138s
+***GPU ERROR checking***
+EF=812.214722 CF=1435.367554 C'F=657.146606
+***counting valid***
+valid mul=13346, simple mul=32768, rate=40.728760% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.391336 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000090s
+***GPU ERROR checking***
+EF=812.214722 CF=1435.367554 C'F=657.146606
+***counting valid***
+valid mul=13346, simple mul=32768, rate=40.728760% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.391336 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000071s
+***GPU ERROR checking***
+EF=812.214722 CF=1435.367554 C'F=657.146606
+***counting valid***
+valid mul=13346, simple mul=32768, rate=40.728760% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.391336 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000061s
+***GPU ERROR checking***
+EF=812.214722 CF=1435.367554 C'F=657.146606
+***counting valid***
+valid mul=13346, simple mul=32768, rate=40.728760% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.434815 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000120s
+***GPU ERROR checking***
+EF=961.851135 CF=1435.367554 C'F=507.430573
+***counting valid***
+valid mul=9882, simple mul=32768, rate=30.157471% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.434815 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000079s
+***GPU ERROR checking***
+EF=961.851135 CF=1435.367554 C'F=507.430573
+***counting valid***
+valid mul=9882, simple mul=32768, rate=30.157471% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.434815 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000064s
+***GPU ERROR checking***
+EF=961.851135 CF=1435.367554 C'F=507.430573
+***counting valid***
+valid mul=9882, simple mul=32768, rate=30.157471% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.434815 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000055s
+***GPU ERROR checking***
+EF=961.851135 CF=1435.367554 C'F=507.430573
+***counting valid***
+valid mul=9882, simple mul=32768, rate=30.157471% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.456555 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000110s
+***GPU ERROR checking***
+EF=1024.571655 CF=1435.367554 C'F=446.892059
+***counting valid***
+valid mul=8472, simple mul=32768, rate=25.854492% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.456555 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000074s
+***GPU ERROR checking***
+EF=1024.571655 CF=1435.367554 C'F=446.892059
+***counting valid***
+valid mul=8472, simple mul=32768, rate=25.854492% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.456555 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000062s
+***GPU ERROR checking***
+EF=1024.571655 CF=1435.367554 C'F=446.892059
+***counting valid***
+valid mul=8472, simple mul=32768, rate=25.854492% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.456555 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000054s
+***GPU ERROR checking***
+EF=1024.571655 CF=1435.367554 C'F=446.892059
+***counting valid***
+valid mul=8472, simple mul=32768, rate=25.854492% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.489164 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000098s
+***GPU ERROR checking***
+EF=1113.032715 CF=1435.367554 C'F=359.697723
+***counting valid***
+valid mul=6520, simple mul=32768, rate=19.897461% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.489164 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000066s
+***GPU ERROR checking***
+EF=1113.032715 CF=1435.367554 C'F=359.697723
+***counting valid***
+valid mul=6520, simple mul=32768, rate=19.897461% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.489164 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000055s
+***GPU ERROR checking***
+EF=1113.032715 CF=1435.367554 C'F=359.697723
+***counting valid***
+valid mul=6520, simple mul=32768, rate=19.897461% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.489164 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000050s
+***GPU ERROR checking***
+EF=1113.032715 CF=1435.367554 C'F=359.697723
+***counting valid***
+valid mul=6520, simple mul=32768, rate=19.897461% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.521774 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000088s
+***GPU ERROR checking***
+EF=1181.896362 CF=1435.367554 C'F=290.876221
+***counting valid***
+valid mul=5012, simple mul=32768, rate=15.295410% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.521774 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000061s
+***GPU ERROR checking***
+EF=1181.896362 CF=1435.367554 C'F=290.876221
+***counting valid***
+valid mul=5012, simple mul=32768, rate=15.295410% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.521774 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000052s
+***GPU ERROR checking***
+EF=1181.896362 CF=1435.367554 C'F=290.876221
+***counting valid***
+valid mul=5012, simple mul=32768, rate=15.295410% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.521774 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000046s
+***GPU ERROR checking***
+EF=1181.896362 CF=1435.367554 C'F=290.876221
+***counting valid***
+valid mul=5012, simple mul=32768, rate=15.295410% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.586993 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000078s
+***GPU ERROR checking***
+EF=1258.281006 CF=1435.367554 C'F=202.219574
+***counting valid***
+valid mul=3354, simple mul=32768, rate=10.235596% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.586993 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000057s
+***GPU ERROR checking***
+EF=1258.281006 CF=1435.367554 C'F=202.219574
+***counting valid***
+valid mul=3354, simple mul=32768, rate=10.235596% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.586993 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000047s
+***GPU ERROR checking***
+EF=1258.281006 CF=1435.367554 C'F=202.219574
+***counting valid***
+valid mul=3354, simple mul=32768, rate=10.235596% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.586993 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000044s
+***GPU ERROR checking***
+EF=1258.281006 CF=1435.367554 C'F=202.219574
+***counting valid***
+valid mul=3354, simple mul=32768, rate=10.235596% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.695691 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000067s
+***GPU ERROR checking***
+EF=1330.436157 CF=1435.367554 C'F=126.307724
+***counting valid***
+valid mul=1894, simple mul=32768, rate=5.780029% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.695691 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000049s
+***GPU ERROR checking***
+EF=1330.436157 CF=1435.367554 C'F=126.307724
+***counting valid***
+valid mul=1894, simple mul=32768, rate=5.780029% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.695691 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000041s
+***GPU ERROR checking***
+EF=1330.436157 CF=1435.367554 C'F=126.307724
+***counting valid***
+valid mul=1894, simple mul=32768, rate=5.780029% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+1024 1024 1024
+1024 1024 1024
+para: T=32 NormINIT=1.695691 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000045s
+***GPU ERROR checking***
+EF=1330.436157 CF=1435.367554 C'F=126.307724
+***counting valid***
+valid mul=1894, simple mul=32768, rate=5.780029% aveNorm=1.391377
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.241161 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000879s
+***GPU ERROR checking***
+EF=2364.301514 CF=5128.305664 C'F=2918.505859
+***counting valid***
+valid mul=133660, simple mul=262144, rate=50.987244% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.241161 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000491s
+***GPU ERROR checking***
+EF=2364.301514 CF=5128.305664 C'F=2918.505859
+***counting valid***
+valid mul=133660, simple mul=262144, rate=50.987244% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.241161 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000289s
+***GPU ERROR checking***
+EF=2364.301514 CF=5128.305664 C'F=2918.505859
+***counting valid***
+valid mul=133660, simple mul=262144, rate=50.987244% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.241161 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000176s
+***GPU ERROR checking***
+EF=2364.301514 CF=5128.305664 C'F=2918.505859
+***counting valid***
+valid mul=133660, simple mul=262144, rate=50.987244% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.275913 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000706s
+***GPU ERROR checking***
+EF=2942.719238 CF=5128.305664 C'F=2348.889893
+***counting valid***
+valid mul=103834, simple mul=262144, rate=39.609528% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.275913 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000401s
+***GPU ERROR checking***
+EF=2942.719238 CF=5128.305664 C'F=2348.889893
+***counting valid***
+valid mul=103834, simple mul=262144, rate=39.609528% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.275913 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000240s
+***GPU ERROR checking***
+EF=2942.719238 CF=5128.305664 C'F=2348.889893
+***counting valid***
+valid mul=103834, simple mul=262144, rate=39.609528% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.275913 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000149s
+***GPU ERROR checking***
+EF=2942.719238 CF=5128.305664 C'F=2348.889893
+***counting valid***
+valid mul=103834, simple mul=262144, rate=39.609528% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.310666 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000562s
+***GPU ERROR checking***
+EF=3424.143555 CF=5128.305664 C'F=1872.164307
+***counting valid***
+valid mul=79746, simple mul=262144, rate=30.420685% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.310666 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000327s
+***GPU ERROR checking***
+EF=3424.143555 CF=5128.305664 C'F=1872.164307
+***counting valid***
+valid mul=79746, simple mul=262144, rate=30.420685% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.310666 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000197s
+***GPU ERROR checking***
+EF=3424.143555 CF=5128.305664 C'F=1872.164307
+***counting valid***
+valid mul=79746, simple mul=262144, rate=30.420685% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.310666 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000125s
+***GPU ERROR checking***
+EF=3424.143555 CF=5128.305664 C'F=1872.164307
+***counting valid***
+valid mul=79746, simple mul=262144, rate=30.420685% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.330525 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000503s
+***GPU ERROR checking***
+EF=3661.070557 CF=5128.305664 C'F=1647.817993
+***counting valid***
+valid mul=67954, simple mul=262144, rate=25.922394% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.330525 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000296s
+***GPU ERROR checking***
+EF=3661.070557 CF=5128.305664 C'F=1647.817993
+***counting valid***
+valid mul=67954, simple mul=262144, rate=25.922394% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.330525 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000174s
+***GPU ERROR checking***
+EF=3661.070557 CF=5128.305664 C'F=1647.817993
+***counting valid***
+valid mul=67954, simple mul=262144, rate=25.922394% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.330525 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000117s
+***GPU ERROR checking***
+EF=3661.070557 CF=5128.305664 C'F=1647.817993
+***counting valid***
+valid mul=67954, simple mul=262144, rate=25.922394% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.360312 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000422s
+***GPU ERROR checking***
+EF=3966.387451 CF=5128.305664 C'F=1357.790894
+***counting valid***
+valid mul=53992, simple mul=262144, rate=20.596313% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.360312 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000253s
+***GPU ERROR checking***
+EF=3966.387451 CF=5128.305664 C'F=1357.790894
+***counting valid***
+valid mul=53992, simple mul=262144, rate=20.596313% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.360312 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000154s
+***GPU ERROR checking***
+EF=3966.387451 CF=5128.305664 C'F=1357.790894
+***counting valid***
+valid mul=53992, simple mul=262144, rate=20.596313% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.360312 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000110s
+***GPU ERROR checking***
+EF=3966.387451 CF=5128.305664 C'F=1357.790894
+***counting valid***
+valid mul=53992, simple mul=262144, rate=20.596313% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.400030 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000336s
+***GPU ERROR checking***
+EF=4264.450684 CF=5128.305664 C'F=1032.947021
+***counting valid***
+valid mul=39070, simple mul=262144, rate=14.904022% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.400030 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000205s
+***GPU ERROR checking***
+EF=4264.450684 CF=5128.305664 C'F=1032.947021
+***counting valid***
+valid mul=39070, simple mul=262144, rate=14.904022% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.400030 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000131s
+***GPU ERROR checking***
+EF=4264.450684 CF=5128.305664 C'F=1032.947021
+***counting valid***
+valid mul=39070, simple mul=262144, rate=14.904022% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.400030 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000097s
+***GPU ERROR checking***
+EF=4264.450684 CF=5128.305664 C'F=1032.947021
+***counting valid***
+valid mul=39070, simple mul=262144, rate=14.904022% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.449676 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000257s
+***GPU ERROR checking***
+EF=4575.118652 CF=5128.305664 C'F=740.609131
+***counting valid***
+valid mul=25580, simple mul=262144, rate=9.757996% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.449676 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000164s
+***GPU ERROR checking***
+EF=4575.118652 CF=5128.305664 C'F=740.609131
+***counting valid***
+valid mul=25580, simple mul=262144, rate=9.757996% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.449676 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000109s
+***GPU ERROR checking***
+EF=4575.118652 CF=5128.305664 C'F=740.609131
+***counting valid***
+valid mul=25580, simple mul=262144, rate=9.757996% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.449676 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000085s
+***GPU ERROR checking***
+EF=4575.118652 CF=5128.305664 C'F=740.609131
+***counting valid***
+valid mul=25580, simple mul=262144, rate=9.757996% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.548969 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000181s
+***GPU ERROR checking***
+EF=4850.428223 CF=5128.305664 C'F=396.637634
+***counting valid***
+valid mul=12850, simple mul=262144, rate=4.901886% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.548969 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000123s
+***GPU ERROR checking***
+EF=4850.428223 CF=5128.305664 C'F=396.637634
+***counting valid***
+valid mul=12850, simple mul=262144, rate=4.901886% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.548969 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000095s
+***GPU ERROR checking***
+EF=4850.428223 CF=5128.305664 C'F=396.637634
+***counting valid***
+valid mul=12850, simple mul=262144, rate=4.901886% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+2048 2048 2048
+2048 2048 2048
+para: T=32 NormINIT=1.548969 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000075s
+***GPU ERROR checking***
+EF=4850.428223 CF=5128.305664 C'F=396.637634
+***counting valid***
+valid mul=12850, simple mul=262144, rate=4.901886% aveNorm=1.270956
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.132389 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.007303s
+***GPU ERROR checking***
+EF=8170.916992 CF=18217.484375 C'F=10627.017578
+***counting valid***
+valid mul=1067148, simple mul=2097152, rate=50.885582% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.132389 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.003743s
+***GPU ERROR checking***
+EF=8170.916992 CF=18217.484375 C'F=10627.017578
+***counting valid***
+valid mul=1067148, simple mul=2097152, rate=50.885582% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.132389 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001982s
+***GPU ERROR checking***
+EF=8170.916992 CF=18217.484375 C'F=10627.017578
+***counting valid***
+valid mul=1067148, simple mul=2097152, rate=50.885582% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.132389 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001045s
+***GPU ERROR checking***
+EF=8170.916992 CF=18217.484375 C'F=10627.017578
+***counting valid***
+valid mul=1067148, simple mul=2097152, rate=50.885582% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.164096 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.005846s
+***GPU ERROR checking***
+EF=10170.347656 CF=18217.484375 C'F=8514.586914
+***counting valid***
+valid mul=839580, simple mul=2097152, rate=40.034294% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.164096 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.003017s
+***GPU ERROR checking***
+EF=10170.347656 CF=18217.484375 C'F=8514.586914
+***counting valid***
+valid mul=839580, simple mul=2097152, rate=40.034294% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.164096 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001665s
+***GPU ERROR checking***
+EF=10170.347656 CF=18217.484375 C'F=8514.586914
+***counting valid***
+valid mul=839580, simple mul=2097152, rate=40.034294% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.164096 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000901s
+***GPU ERROR checking***
+EF=10170.347656 CF=18217.484375 C'F=8514.586914
+***counting valid***
+valid mul=839580, simple mul=2097152, rate=40.034294% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.195803 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.004599s
+***GPU ERROR checking***
+EF=12146.680664 CF=18217.484375 C'F=6910.740723
+***counting valid***
+valid mul=648178, simple mul=2097152, rate=30.907536% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.195803 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.002383s
+***GPU ERROR checking***
+EF=12146.680664 CF=18217.484375 C'F=6910.740723
+***counting valid***
+valid mul=648178, simple mul=2097152, rate=30.907536% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.195803 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001320s
+***GPU ERROR checking***
+EF=12146.680664 CF=18217.484375 C'F=6910.740723
+***counting valid***
+valid mul=648178, simple mul=2097152, rate=30.907536% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.195803 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000738s
+***GPU ERROR checking***
+EF=12146.680664 CF=18217.484375 C'F=6910.740723
+***counting valid***
+valid mul=648178, simple mul=2097152, rate=30.907536% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.222981 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.003679s
+***GPU ERROR checking***
+EF=13303.705078 CF=18217.484375 C'F=5629.534180
+***counting valid***
+valid mul=512894, simple mul=2097152, rate=24.456692% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.222981 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001917s
+***GPU ERROR checking***
+EF=13303.705078 CF=18217.484375 C'F=5629.534180
+***counting valid***
+valid mul=512894, simple mul=2097152, rate=24.456692% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.222981 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001085s
+***GPU ERROR checking***
+EF=13303.705078 CF=18217.484375 C'F=5629.534180
+***counting valid***
+valid mul=512894, simple mul=2097152, rate=24.456692% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.222981 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000612s
+***GPU ERROR checking***
+EF=13303.705078 CF=18217.484375 C'F=5629.534180
+***counting valid***
+valid mul=512894, simple mul=2097152, rate=24.456692% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.250158 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.002916s
+***GPU ERROR checking***
+EF=14486.132812 CF=18217.484375 C'F=4595.624023
+***counting valid***
+valid mul=405532, simple mul=2097152, rate=19.337273% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.250158 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001527s
+***GPU ERROR checking***
+EF=14486.132812 CF=18217.484375 C'F=4595.624023
+***counting valid***
+valid mul=405532, simple mul=2097152, rate=19.337273% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.250158 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000873s
+***GPU ERROR checking***
+EF=14486.132812 CF=18217.484375 C'F=4595.624023
+***counting valid***
+valid mul=405532, simple mul=2097152, rate=19.337273% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.250158 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000508s
+***GPU ERROR checking***
+EF=14486.132812 CF=18217.484375 C'F=4595.624023
+***counting valid***
+valid mul=405532, simple mul=2097152, rate=19.337273% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.277335 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.002271s
+***GPU ERROR checking***
+EF=15596.750977 CF=18217.484375 C'F=3785.304443
+***counting valid***
+valid mul=316704, simple mul=2097152, rate=15.101624% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.277335 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001201s
+***GPU ERROR checking***
+EF=15596.750977 CF=18217.484375 C'F=3785.304443
+***counting valid***
+valid mul=316704, simple mul=2097152, rate=15.101624% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.277335 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000686s
+***GPU ERROR checking***
+EF=15596.750977 CF=18217.484375 C'F=3785.304443
+***counting valid***
+valid mul=316704, simple mul=2097152, rate=15.101624% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.277335 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000409s
+***GPU ERROR checking***
+EF=15596.750977 CF=18217.484375 C'F=3785.304443
+***counting valid***
+valid mul=316704, simple mul=2097152, rate=15.101624% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.322631 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001568s
+***GPU ERROR checking***
+EF=16258.390625 CF=18217.484375 C'F=2724.117432
+***counting valid***
+valid mul=210946, simple mul=2097152, rate=10.058689% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.322631 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000851s
+***GPU ERROR checking***
+EF=16258.390625 CF=18217.484375 C'F=2724.117432
+***counting valid***
+valid mul=210946, simple mul=2097152, rate=10.058689% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.322631 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000494s
+***GPU ERROR checking***
+EF=16258.390625 CF=18217.484375 C'F=2724.117432
+***counting valid***
+valid mul=210946, simple mul=2097152, rate=10.058689% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.322631 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000303s
+***GPU ERROR checking***
+EF=16258.390625 CF=18217.484375 C'F=2724.117432
+***counting valid***
+valid mul=210946, simple mul=2097152, rate=10.058689% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.413222 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000893s
+***GPU ERROR checking***
+EF=16727.865234 CF=18217.484375 C'F=1441.105713
+***counting valid***
+valid mul=93554, simple mul=2097152, rate=4.461002% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.413222 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000511s
+***GPU ERROR checking***
+EF=16727.865234 CF=18217.484375 C'F=1441.105713
+***counting valid***
+valid mul=93554, simple mul=2097152, rate=4.461002% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.413222 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000304s
+***GPU ERROR checking***
+EF=16727.865234 CF=18217.484375 C'F=1441.105713
+***counting valid***
+valid mul=93554, simple mul=2097152, rate=4.461002% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+4096 4096 4096
+4096 4096 4096
+para: T=32 NormINIT=1.413222 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.000207s
+***GPU ERROR checking***
+EF=16727.865234 CF=18217.484375 C'F=1441.105713
+***counting valid***
+valid mul=93554, simple mul=2097152, rate=4.461002% aveNorm=1.157666
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.031466 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.059613s
+***GPU ERROR checking***
+EF=8292.977539 CF=23170.474609 C'F=29754.646484
+***counting valid***
+valid mul=8529034, simple mul=16777216, rate=50.837006% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.031466 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.029986s
+***GPU ERROR checking***
+EF=8292.977539 CF=23170.474609 C'F=29754.646484
+***counting valid***
+valid mul=8529034, simple mul=16777216, rate=50.837006% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.031466 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.015994s
+***GPU ERROR checking***
+EF=8292.977539 CF=23170.474609 C'F=29754.646484
+***counting valid***
+valid mul=8529034, simple mul=16777216, rate=50.837006% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.031466 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.008447s
+***GPU ERROR checking***
+EF=8292.977539 CF=23170.474609 C'F=29754.646484
+***counting valid***
+valid mul=8529034, simple mul=16777216, rate=50.837006% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.060347 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.047626s
+***GPU ERROR checking***
+EF=7584.748535 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=6739006, simple mul=16777216, rate=40.167606% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.060347 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.023992s
+***GPU ERROR checking***
+EF=7584.748535 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=6739006, simple mul=16777216, rate=40.167606% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.060347 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.013042s
+***GPU ERROR checking***
+EF=7584.748535 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=6739006, simple mul=16777216, rate=40.167606% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.060347 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.007126s
+***GPU ERROR checking***
+EF=7584.748535 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=6739006, simple mul=16777216, rate=40.167606% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.093354 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.036285s
+***GPU ERROR checking***
+EF=11496.610352 CF=23170.474609 C'F=19509.494141
+***counting valid***
+valid mul=5043656, simple mul=16777216, rate=30.062532% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.093354 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.018309s
+***GPU ERROR checking***
+EF=11496.610352 CF=23170.474609 C'F=19509.494141
+***counting valid***
+valid mul=5043656, simple mul=16777216, rate=30.062532% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.093354 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.010247s
+***GPU ERROR checking***
+EF=11496.610352 CF=23170.474609 C'F=19509.494141
+***counting valid***
+valid mul=5043656, simple mul=16777216, rate=30.062532% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.093354 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.005557s
+***GPU ERROR checking***
+EF=11496.610352 CF=23170.474609 C'F=19509.494141
+***counting valid***
+valid mul=5043656, simple mul=16777216, rate=30.062532% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.113983 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.030427s
+***GPU ERROR checking***
+EF=13890.580078 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=4172174, simple mul=16777216, rate=24.868095% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.113983 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.015381s
+***GPU ERROR checking***
+EF=13890.580078 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=4172174, simple mul=16777216, rate=24.868095% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.113983 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.008660s
+***GPU ERROR checking***
+EF=13890.580078 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=4172174, simple mul=16777216, rate=24.868095% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.113983 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.004704s
+***GPU ERROR checking***
+EF=13890.580078 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=4172174, simple mul=16777216, rate=24.868095% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.138739 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.024418s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=15448.742188
+***counting valid***
+valid mul=3301900, simple mul=16777216, rate=19.680859% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.138739 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.012448s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=15448.742188
+***counting valid***
+valid mul=3301900, simple mul=16777216, rate=19.680859% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.138739 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.007028s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=15448.742188
+***counting valid***
+valid mul=3301900, simple mul=16777216, rate=19.680859% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.138739 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.003835s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=15448.742188
+***counting valid***
+valid mul=3301900, simple mul=16777216, rate=19.680859% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.171746 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.018456s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=2403498, simple mul=16777216, rate=14.325964% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.171746 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.009400s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=2403498, simple mul=16777216, rate=14.325964% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.171746 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.005284s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=2403498, simple mul=16777216, rate=14.325964% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.171746 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.002898s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=2403498, simple mul=16777216, rate=14.325964% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.204753 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.013920s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=9255.720703
+***counting valid***
+valid mul=1740162, simple mul=16777216, rate=10.372173% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.204753 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.007119s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=9255.720703
+***counting valid***
+valid mul=1740162, simple mul=16777216, rate=10.372173% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.204753 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.003999s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=9255.720703
+***counting valid***
+valid mul=1740162, simple mul=16777216, rate=10.372173% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.204753 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.002206s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=9255.720703
+***counting valid***
+valid mul=1740162, simple mul=16777216, rate=10.372173% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.287270 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.007048s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=5190.404785
+***counting valid***
+valid mul=776824, simple mul=16777216, rate=4.630232% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.287270 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.003662s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=5190.404785
+***counting valid***
+valid mul=776824, simple mul=16777216, rate=4.630232% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.287270 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.002092s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=5190.404785
+***counting valid***
+valid mul=776824, simple mul=16777216, rate=4.630232% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+8192 8192 8192
+8192 8192 8192
+para: T=32 NormINIT=1.287270 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.001228s
+***GPU ERROR checking***
+EF=16384.000000 CF=23170.474609 C'F=5190.404785
+***counting valid***
+valid mul=776824, simple mul=16777216, rate=4.630232% aveNorm=1.024098
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.937826 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.431653s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46737.859375
+***counting valid***
+valid mul=67960114, simple mul=134217728, rate=50.634228% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.937826 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.243769s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46737.859375
+***counting valid***
+valid mul=67960114, simple mul=134217728, rate=50.634228% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.937826 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.126297s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46737.859375
+***counting valid***
+valid mul=67960114, simple mul=134217728, rate=50.634228% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.937826 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.065305s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46737.859375
+***counting valid***
+valid mul=67960114, simple mul=134217728, rate=50.634228% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.964085 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.345887s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=53963446, simple mul=134217728, rate=40.205902% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.964085 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.197842s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=53963446, simple mul=134217728, rate=40.205902% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.964085 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.105718s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=53963446, simple mul=134217728, rate=40.205902% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.964085 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.056872s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=53963446, simple mul=134217728, rate=40.205902% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.997847 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.262226s
+***GPU ERROR checking***
+EF=19516.017578 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=39208322, simple mul=134217728, rate=29.212475% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.997847 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.147661s
+***GPU ERROR checking***
+EF=19516.017578 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=39208322, simple mul=134217728, rate=29.212475% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.997847 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.080811s
+***GPU ERROR checking***
+EF=19516.017578 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=39208322, simple mul=134217728, rate=29.212475% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=0.997847 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.043462s
+***GPU ERROR checking***
+EF=19516.017578 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=39208322, simple mul=134217728, rate=29.212475% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.012852 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.232320s
+***GPU ERROR checking***
+EF=20598.009766 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=33806018, simple mul=134217728, rate=25.187445% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.012852 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.129456s
+***GPU ERROR checking***
+EF=20598.009766 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=33806018, simple mul=134217728, rate=25.187445% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.012852 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.071212s
+***GPU ERROR checking***
+EF=20598.009766 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=33806018, simple mul=134217728, rate=25.187445% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.012852 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.037408s
+***GPU ERROR checking***
+EF=20598.009766 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=33806018, simple mul=134217728, rate=25.187445% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.035360 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.179949s
+***GPU ERROR checking***
+EF=22067.984375 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=26945406, simple mul=134217728, rate=20.075891% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.035360 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.105790s
+***GPU ERROR checking***
+EF=22067.984375 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=26945406, simple mul=134217728, rate=20.075891% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.035360 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.058497s
+***GPU ERROR checking***
+EF=22067.984375 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=26945406, simple mul=134217728, rate=20.075891% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.035360 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.030710s
+***GPU ERROR checking***
+EF=22067.984375 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=26945406, simple mul=134217728, rate=20.075891% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.065370 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.135641s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=19777800, simple mul=134217728, rate=14.735609% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.065370 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.083466s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=19777800, simple mul=134217728, rate=14.735609% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.065370 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.044328s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=19777800, simple mul=134217728, rate=14.735609% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.065370 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.024141s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=19777800, simple mul=134217728, rate=14.735609% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.110386 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.089241s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=12309324, simple mul=134217728, rate=9.171161% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.110386 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.058039s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=12309324, simple mul=134217728, rate=9.171161% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.110386 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.029323s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=12309324, simple mul=134217728, rate=9.171161% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.110386 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.016736s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=16384.000000
+***counting valid***
+valid mul=12309324, simple mul=134217728, rate=9.171161% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.170407 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.052435s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=6522118, simple mul=134217728, rate=4.859356% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.170407 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.031589s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=6522118, simple mul=134217728, rate=4.859356% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.170407 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.017201s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=6522118, simple mul=134217728, rate=4.859356% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+16384 16384 16384
+16384 16384 16384
+para: T=32 NormINIT=1.170407 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.009372s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=11585.237305
+***counting valid***
+valid mul=6522118, simple mul=134217728, rate=4.859356% aveNorm=0.250050
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.851071 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=2.909993s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=541337010, simple mul=1073741824, rate=50.415939% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.851071 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.840581s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=541337010, simple mul=1073741824, rate=50.415939% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.851071 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.946149s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=541337010, simple mul=1073741824, rate=50.415939% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.851071 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.483445s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=541337010, simple mul=1073741824, rate=50.415939% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.874901 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=2.337722s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=431873860, simple mul=1073741824, rate=40.221386% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.874901 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.516258s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=431873860, simple mul=1073741824, rate=40.221386% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.874901 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.777863s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=431873860, simple mul=1073741824, rate=40.221386% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.874901 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.402045s
+***GPU ERROR checking***
+EF=46340.949219 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=431873860, simple mul=1073741824, rate=40.221386% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.905539 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.728732s
+***GPU ERROR checking***
+EF=33600.769531 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=315922638, simple mul=1073741824, rate=29.422586% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.905539 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.200749s
+***GPU ERROR checking***
+EF=33600.769531 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=315922638, simple mul=1073741824, rate=29.422586% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.905539 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.589072s
+***GPU ERROR checking***
+EF=33600.769531 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=315922638, simple mul=1073741824, rate=29.422586% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.905539 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.309530s
+***GPU ERROR checking***
+EF=33600.769531 CF=23170.474609 C'F=65536.000000
+***counting valid***
+valid mul=315922638, simple mul=1073741824, rate=29.422586% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.919156 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.505218s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=64569.292969
+***counting valid***
+valid mul=273390622, simple mul=1073741824, rate=25.461487% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.919156 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.004016s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=64569.292969
+***counting valid***
+valid mul=273390622, simple mul=1073741824, rate=25.461487% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.919156 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.518613s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=64569.292969
+***counting valid***
+valid mul=273390622, simple mul=1073741824, rate=25.461487% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.919156 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.273739s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=64569.292969
+***counting valid***
+valid mul=273390622, simple mul=1073741824, rate=25.461487% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.939582 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=1.220730s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=219056482, simple mul=1073741824, rate=20.401224% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.939582 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.820022s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=219056482, simple mul=1073741824, rate=20.401224% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.939582 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.427778s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=219056482, simple mul=1073741824, rate=20.401224% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.939582 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.231323s
+***GPU ERROR checking***
+EF=32768.000000 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=219056482, simple mul=1073741824, rate=20.401224% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.966816 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.920308s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=161972162, simple mul=1073741824, rate=15.084833% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.966816 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.621949s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=161972162, simple mul=1073741824, rate=15.084833% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.966816 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.330738s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=161972162, simple mul=1073741824, rate=15.084833% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=0.966816 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.181278s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=46340.949219
+***counting valid***
+valid mul=161972162, simple mul=1073741824, rate=15.084833% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.007668 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.606567s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=102179364, simple mul=1073741824, rate=9.516194% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.007668 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.410551s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=102179364, simple mul=1073741824, rate=9.516194% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.007668 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.224236s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=102179364, simple mul=1073741824, rate=9.516194% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.007668 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.125516s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=32768.000000
+***counting valid***
+valid mul=102179364, simple mul=1073741824, rate=9.516194% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.062136 DEVICE=1 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.356083s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=54847304, simple mul=1073741824, rate=5.108053% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.062136 DEVICE=2 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.238319s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=54847304, simple mul=1073741824, rate=5.108053% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.062136 DEVICE=4 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.133442s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=54847304, simple mul=1073741824, rate=5.108053% aveNorm=0.031267
+single
+
+
+INIT DONE--------------
+32768 32768 32768
+32768 32768 32768
+para: T=32 NormINIT=1.062136 DEVICE=8 PARTS=1 ALG=1 EXP=0 half=1
+spammm time=0.074601s
+***GPU ERROR checking***
+EF=23170.474609 CF=23170.474609 C'F=23170.474609
+***counting valid***
+valid mul=54847304, simple mul=1073741824, rate=5.108053% aveNorm=0.031267
+single
+
+
+
