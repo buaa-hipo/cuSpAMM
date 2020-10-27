@@ -459,15 +459,16 @@ int main(int argc, char **argv){
     }
 
     printf("INIT DONE--------------\n");
-    printf("para: M=%d K=%d N=%d Norm=%f DEVICE=%d PARTS=%d \nALG=%d EXP=%d CNN=%d DECAY=%d\n",M,K,N,NormINIT,DEVICEDIM,PART,MATRIXALG,MATRIXEXP,CNN,DECAY);
-    printf("TUNINGFLAG=%d ExpectedRate=%f TUNINGTIME=%d TUNINGERROR=%f\n",TUNINGFLAG,ExpectedRate,TUNINGTIME,TUNINGERROR);
-
+    printf("%d %d %d\n",inM,inK,inN);
+    printf("%d %d %d\n",M,K,N);
+    printf("para: T=%d Norm=%f DEVICE=%d PARTS=%d ALG=%d EXP=%d half=%d\n",T,Norm,DEVICEDIM,PART,MATRIXALG,MATRIXEXP,USINGHALF);
     //计时部分
     cudaEvent_t start, stop;
     float elapsed = 0.0;
     double sum=0.0;
 
     #if SpAMM
+    #pragma unroll DEVICEDIM
     for(int i=0;i<TESTTIME;i++){
         cudaEventCreate(&start);
         cudaEventCreate(&stop);
@@ -477,9 +478,11 @@ int main(int argc, char **argv){
         int A_blocks = M*K/(LoNum*LoNum),B_blocks = (K*N)/(LoNum*LoNum),F_threads = LoNum*LoNum;
 
 
-        #pragma omp parallel num_threads(DEVICEDIM)
+        #pragma omp parallel num_thread(DEVICEDIM)
         { 
-            int device = omp_get_thread_num();
+            int tid = omp_get_thread_num();
+        #pragma unroll 2
+        for(int device=0;device<DEVICEDIM;device++){
             cudaSetDevice(device);
 
             //计算全部B范数
@@ -500,10 +503,21 @@ int main(int argc, char **argv){
 
                 }
                 #endif
-                // printf("---the normmap of B:---\n");
-                // // MATRIXSHOW21D(plan[device].B_normmap,B_blocks,1);
+            }
+        }
 
-                //计算某几行A范数和C结果
+        for(int device=0;device<DEVICEDIM;device++){
+            cudaSetDevice(device);
+            cudaStreamSynchronize(plan[device].stream);
+            // printf("---the normmap of B:---\n");
+            // // MATRIXSHOW21D(plan[device].B_normmap,B_blocks,1);
+        }
+
+        }
+        for(int device=0;device<DEVICEDIM;device++){
+            cudaSetDevice(device);
+            //计算某几行A范数和C结果
+            for(int p=0;p<PART;p++){
                 #if !USINGHALF
                 if(LoNum==32){
                     unroll_get_Fnorm_pri<<<A_blocks/DEVICEDIM/PART,F_threads/8,0,plan[device].stream>>>(plan[device].h_A,plan[device].A_normmap,M,K,device*(M/LoNum/DEVICEDIM)+p*(partBlockOffset/DEVICEDIM));
@@ -521,7 +535,10 @@ int main(int argc, char **argv){
                 }
                 #endif
             }
+        }
 
+        for(int device=0;device<DEVICEDIM;device++){
+            cudaSetDevice(device);
             cudaStreamSynchronize(plan[device].stream);
 
             #if TUNINGFLAG
@@ -529,7 +546,10 @@ int main(int argc, char **argv){
             #else
             Norm = NormINIT;
             #endif
+        }
 
+        for(int device=0;device<DEVICEDIM;device++){
+            cudaSetDevice(device);
             for(int p=0;p<PART;p++){
                 #if !USINGHALF
                 if(LoNum==32){
