@@ -49,7 +49,7 @@ const double ExpectedRate = 0.75;
 #define TRUNCATIONNUM 0.030
 
 #define SpAMM 1
-#define CUBLAS 0
+#define CUBLAS 1
 
 const int M = ((inM-1)/LoNum+1) * LoNum;
 const int K = ((inK-1)/LoNum+1) * LoNum;
@@ -143,6 +143,6 @@ void getNormMatrix(mytype *A, mytype *B);
 void getDecayMatrixExp(mytype *A, float c, float v, int m, int n);
 void getDecayMatrixAlg(mytype *A, float c, float v, int m, int n);
 
-mytype *copy_B(mytype *B,int m,int n);
+float *copy_B(mytype *B,int m,int n);
 void truncation(float *M, float *ORI, float flag);
 void getDecayMatrixAlgDouble(double *A, double c, double v, int m, int n);

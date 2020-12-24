@@ -1,6 +1,6 @@
-#define USINGHALF 1
-const double NormINIT=1.277335;
-#define TESTTIME 20
+#define USINGHALF 0
+const double NormINIT=0;
+#define TESTTIME 10
 #define WARMUP 3
 const int inM=4096;
 const int inK=4096;

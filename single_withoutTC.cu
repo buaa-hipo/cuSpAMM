@@ -47,7 +47,22 @@ __global__ void unroll_get_Fnorm_pri_FP16(const half* __restrict__ A,float *A_no
         const half t7 = A[tadd+6];
         const half t8 = A[tadd+7];
         const half t11 = __hmul(t1,t1);
-        // val = t1*t1+t2*t2+t3*t3+t4*t4+t5*t5+t6*t6+t7*t7+t8*t8;
+        const half t21 = __hmul(t2,t2);
+        const half t31 = __hmul(t3,t3);
+        const half t41 = __hmul(t4,t4);
+        const half t51 = __hmul(t5,t5);
+        const half t61 = __hmul(t6,t6);
+        const half t71 = __hmul(t7,t7);
+        const half t81 = __hmul(t8,t8);
+
+        const half t12 = __hadd(t11,t21);
+        const half t23 = __hadd(t12,t31);
+        const half t34 = __hadd(t23,t41);
+        const half t45 = __hadd(t34,t51);
+        const half t56 = __hadd(t45,t61);
+        const half t67 = __hadd(t56,t71);
+        const half t78 = __hadd(t67,t81);
+        val = __half2float(t78);
     } 
     
     #define FULL_MASK 0xffffffff

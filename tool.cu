@@ -199,10 +199,14 @@ void run_cublas_time(mytype* A,mytype* B){
 void check_simple_gpu(mytype* A,mytype* B,float* in_C){
 
     int lda, ldb, ldc, m, n, k;
-    const mytype alf = 1.0f;
-    const mytype bet = 0.0f;
-    const mytype *alpha = &alf;
-    const mytype *beta = &bet;
+    // const mytype alf = 1.0f;
+    // const mytype bet = 0.0f;
+    // const mytype *alpha = &alf;
+    // const mytype *beta = &bet;
+    const float alf = 1.0f;
+    const float bet = 0.0f;
+    const float *alpha = &alf;
+    const float *beta = &bet;
     m=M;
     n=N;
     k=K;
@@ -210,6 +214,7 @@ void check_simple_gpu(mytype* A,mytype* B,float* in_C){
 	ldb = k;
 	ldc = n;
 
+    float* C;
     cudaMallocHost((void **)&C, sizeof(float)*M*N);
     printf("***GPU ERROR checking***\n");
     
@@ -217,12 +222,13 @@ void check_simple_gpu(mytype* A,mytype* B,float* in_C){
     cublasStatus_t stat;
     cublasHandle_t handle;
     cublasCreate(&handle);
-    mytype *AA=copy_B(A,M,K);
-    mytype *BB=copy_B(B,K,N);
+    float *AA=copy_B(A,M,K);
+    float *BB=copy_B(B,K,N);
     #if !USINGHALF
     cublasSgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
     #else
-    cublasHgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
+    // cublasHgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
+    cublasSgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
     #endif
 
     cudaDeviceSynchronize();
@@ -557,9 +563,9 @@ void checkNormMap(float* A,float* A_normmap){
 }
 
 //转置B矩阵
-mytype* copy_B(mytype* B,int m,int n){
-    mytype *b;
-    cudaMallocManaged((void **)&b, sizeof(mytype)*m*n);
+float* copy_B(mytype* B,int m,int n){
+    float *b;
+    cudaMallocManaged((void **)&b, sizeof(float)*m*n);
     // for(int i=0;i<n;i++){
     //     for(int j=0;j<m;j++){
     //         #if USINGHALF
