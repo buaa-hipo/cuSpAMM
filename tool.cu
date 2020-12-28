@@ -344,7 +344,7 @@ void getNormMatrix(mytype* A,mytype* B){
             float t;
             t=1;
             // if(j%2==0) t=1;
-            if(rand()%3==0) t+=rand()%3;
+            // if(rand()%3==0) t+=rand()%3;
             // t = (float) (rand()%2);//(float) (rand()%100);
             // t = (float) (rand()%100);
             #if !USINGHALF
@@ -358,7 +358,7 @@ void getNormMatrix(mytype* A,mytype* B){
         for(int j=0;j<inN;j++){
             float t;
             t=1;
-            if(j%2==0) t+=rand()%3;
+            // if(j%2==0) t+=rand()%3;
             // if(i==j){
             //     if(j>=K/2) t=0;
             // }

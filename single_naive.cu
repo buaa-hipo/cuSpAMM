@@ -143,28 +143,35 @@ __global__ void unroll_get_Fnorm_FP16(const half* __restrict__ A,float *A_normma
 }
 
 //每个kernel计算C[LoNum,LoNum]
-//32个warp
+//静态无分配版本，每个线程一个元素进行计算，LoNum*LoNum个线程
 __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const float* __restrict__ A_normmap,const float* __restrict__ B,const float* __restrict__ B_normmap,float* C,const int main_row_offset,float Norm){
     int id = blockIdx.x * blockDim.x + threadIdx.x;
     int kId = blockIdx.x;//kernel
     int thId = threadIdx.x;
     int REDUCECBL = 1<<(int)(log2(CBLMUN*1.0)+1);
-    int warpId = thId / 32;
-    int warpi = thId % 32;
-    float norm_mul;
-    const int first16 = 1-warpId/16;
 
+    __shared__ int sC_bitmap[CBLMUN*2];//share mem需要初始化！！
+    // __shared__ int sC_bitmap_debug[CBLMUN];
+    __shared__ int sC_offset[CBLMUN];
+    __shared__ float sA0[LoNum*LoNum],sB0[LoNum*LoNum]; //sC可以换成局部变量，但有local的风险
+    __shared__ float sA1[LoNum*LoNum],sB1[LoNum*LoNum]; 
+
+    float norm_mul,myCresult=0.0f;
     const int myBlockRow = kId / (N/LoNum) + main_row_offset; 
     const int myBlockCol = kId % (N/LoNum); //负责计算块坐标C[Brow,Bcol]处的块
     const int myBlockRowOff = myBlockRow*LoNum;
     const int myBlockColOff = myBlockCol*LoNum;
+    const int myThreadRow = thId/LoNum;
+    const int myThreadCol = thId%LoNum;
+    const int myFinalRow = myBlockRowOff+myThreadRow;
+    const int myFinalCol = myBlockColOff+myThreadCol;
 
-    __shared__ int sC_bitmap[CBLMUN*2];
-    __shared__ int sC_offset[CBLMUN];
-    __shared__ float sA0[LoNum*LoNum],sB0[LoNum*LoNum];
-    __shared__ float sA1[LoNum*LoNum],sB1[LoNum*LoNum]; 
-
-    //得出算哪些
+    // if(thId==0){
+    //     printf("kid=%d br=%d bc=%d\n",kId,myBlockRow,myBlockCol);
+    // }
+    
+    
+    // 需要A_norm第R行，B_norm第C列
     #pragma unroll
     for(int i=thId;i<CBLMUN*2;i+=blockDim.x){
         if(i<(CBLMUN)){
@@ -197,90 +204,47 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
 		}
 		__syncthreads();
     }
-    const int validNum = sC_bitmap[0]; 
+    const int validNum = sC_bitmap[0]; //不会conflict，只有同bank不同位置才会发生
+    // // if(kId==0&&thId==0) printf("\nsum=%d\n",sC_bitmap[0]);
 
-    //32warp 预取，前16个取A，后16个取B
-    //每个线程取相邻的两个
+    
+    // if(kId==0&&thId==0) printf("\nsum=%d\n",validNum);
+
+    //遍历bitmap,每个线程负责一个位置的元素
+    //先使用sA0的数据
     int this_b,next_b;
     if(validNum>0){
         this_b=sC_offset[0];
-        //每个thread负责的小块，tempid为16warp中的偏移
-        int tempid=thId-16*32*(warpId/16);
-        int tempi=tempid/16;
-        int tempj=tempid%16*2;
-        const float* matrix;
-        float *smatrix;
-        if(first16){
-            smatrix=sA0;
-            matrix=&GETELEMENT21(A,myBlockRowOff+tempi,this_b*LoNum+tempj,K);
-        }
-        else{
-            smatrix=sB0;
-            matrix=&GETELEMENT21(B,this_b*LoNum+tempi,myBlockColOff+tempj,K);
-        }
-        smatrix[tempid*2]=*(matrix);
-        smatrix[tempid*2+1]=*(matrix+1);
-        // printf("%d %d data=%f %f\n",tempid,tempid+1,smatrix[tempid],smatrix[tempid+1]);
+        sA0[thId] = GETELEMENT21(A,myFinalRow,this_b*LoNum+myThreadCol,K);//慢
+        sB0[thId] = GETELEMENT21(B,this_b*LoNum+myThreadRow,myFinalCol,N);
+        // if(kId==1&&thId==0) printf("read %d %d\n",myFinalRow,this_b*LoNum+myThreadCol); 
     }
-    else{
-        return;
-    }
-    
-    //进循环
     float * A_this_read=sA0;
     float * B_this_read=sB0;
     float * A_this_write=sA1;
     float * B_this_write=sB1;
-    const int tempid=thId-32*16*(warpId/16)-32*8*(warpId/24);
-    const int tempi=tempid/8;
-    const int tempj=tempid%8*4;
-    const float* matrix;
-    float *smatrix;
-    //16个warp，每个线程计算两个最终结果，算Cblock的[ri,rj]和[ri,rj+1]
-    int ri=thId/16;
-    int rj=thId%16*2;
-    float myCresult1=0.0f,myCresult2=0.0f;
-
     #pragma unroll 
     for(int i=0;i<validNum;i++){
         __syncthreads(); 
         this_b = sC_offset[i];
 
-        if(first16){
-            //前16
-            //矩阵小块(LoNum,LoNum)乘 每个线程算C内[thId/L,thId%L]处的最后值
-            float* mysA = &GETELEMENT21(A_this_read,ri,0,LoNum);//sA第myTR行，sB第myTC列
-            float* mysB1 = &GETELEMENT21(B_this_read,0,rj,LoNum);
-            float* mysB2 = &GETELEMENT21(B_this_read,0,rj+1,LoNum);
-            
-            #pragma unroll
-            for(int i=0;i<LoNum;i++){ //极慢，三倍
-                myCresult1 += *(mysA+i) * *(mysB1+i*LoNum); 
-                myCresult2 += *(mysA+i) * *(mysB2+i*LoNum); 
-                // if(thId==0) printf("%f %f %f\n",myCresult1,*(mysA+i),*(mysB1+i*LoNum));
-            }
-        }
-        else{
-            //后16warp，共同加载share A(mBR)行第b个块,B(mBC)列第b个块
-            if(i<validNum-1){
-                next_b = sC_offset[i+1];
-                const float* matrix;
-                float *smatrix;
-                if(warpId<24){
-                    smatrix=&A_this_write[tempid*4];
-                    matrix=&GETELEMENT21(A,myBlockRowOff+tempi,next_b*LoNum+tempj,K);
-                }
-                else{
-                    smatrix=&B_this_write[tempid*4];
-                    matrix=&GETELEMENT21(B,next_b*LoNum+tempi,myBlockColOff+tempj,K);
-                }
-                *(smatrix)=*(matrix);
-                *(smatrix+1)=*(matrix+1);
-                *(smatrix+2)=*(matrix+2);
-                *(smatrix+3)=*(matrix+3);
-            }
+        //[计算32*32规模的矩阵乘]
+        //共同加载share A(mBR)行第b个块,B(mBC)列第b个块
+        if(i<validNum-1){
+            next_b = sC_offset[i+1];
+            A_this_write[thId] = GETELEMENT21(A,myFinalRow,next_b*LoNum+myThreadCol,K);
+            B_this_write[thId] = GETELEMENT21(B,next_b*LoNum+myThreadRow,myFinalCol,N);
         }
         
+        //矩阵小块(LoNum,LoNum)乘 每个线程算C内[thId/L,thId%L]处的最后值
+        float* mysA = &GETELEMENT21(A_this_read,myThreadRow,0,LoNum);//sA第myTR行，sB第myTC列
+        float* mysB = &GETELEMENT21(B_this_read,0,myThreadCol,LoNum);
+        
+        #pragma unroll
+        for(int i=0;i<LoNum;i++){ //极慢，三倍
+            myCresult += *(mysA+i) * *(mysB+i*LoNum); 
+        }
+
         if(i%2==0){
             A_this_read=sA1;
             B_this_read=sB1;
@@ -295,15 +259,7 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
         }
     }
 
-    //前16
-    if(first16){
-        float* add=&GETELEMENT21(C,myBlockRowOff+ri,myBlockColOff+rj,N);
-        *(add)=myCresult1;
-        *(add+1)=myCresult2;
-        // if(myCresult1!=4096) printf("%f\n",myCresult1);
-    }
-    
-
+    GETELEMENT21(C,myFinalRow,myFinalCol,N) = myCresult;
 }
 
 //4个warp，计算32*32 (4个warp 4*32个线程)
