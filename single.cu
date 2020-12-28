@@ -205,9 +205,9 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
     if(validNum>0){
         this_b=sC_offset[0];
         //每个thread负责的小块，tempid为16warp中的偏移
-        int tempid=thId-16*32*(warpId/16);
-        int tempi=tempid/16;
-        int tempj=tempid%16*2;
+        const int tempid=thId-16*32*(warpId/16);
+        const int tempi=tempid/16;
+        const int tempj=tempid%16*2;
         const float* matrix;
         float *smatrix;
         if(first16){
@@ -254,7 +254,8 @@ __global__ void get_C_Threads1Element_Mul(const float* __restrict__ A,const floa
             float* mysB2 = &GETELEMENT21(B_this_read,0,rj+1,LoNum);
             
             #pragma unroll
-            for(int i=0;i<LoNum;i++){ //极慢，三倍
+            for(int i=0;i<LoNum;i++){ 
+                //算横着的两个虽然B要跨列，但是写回global mem时不用跨列
                 myCresult1 += *(mysA+i) * *(mysB1+i*LoNum); 
                 myCresult2 += *(mysA+i) * *(mysB2+i*LoNum); 
                 // if(thId==0) printf("%f %f %f\n",myCresult1,*(mysA+i),*(mysB1+i*LoNum));
