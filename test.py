@@ -9,11 +9,12 @@ flag=0
 
 
 if ALG == 1:
-    for half in [0,1]:
+    # for half in [0,1]:
+    for half in [0]:
         if half==0:
-            outfile = 'ipdps_alg_FP32_MUL'
+            outfile = 'cf_alg_FP32_MUL'
         else:
-            outfile = 'ipdps_alg_FP16_MUL'
+            outfile = 'a100_alg_FP16_MUL'
         fo = open(outfile, 'w')
         fo.close()
         norm_file = open('normALG', 'r')
@@ -24,6 +25,7 @@ if ALG == 1:
                 if line == '\n':
                     line = norm_file.readline()
                 for devicedim in [1,2,4,8]:
+                # for devicedim in [1]:
                     f = open('para.h', 'w')
                     f.write("#define USINGHALF "+str(half)+"\n")
                     f.write("const double NormINIT="+line+";"+"\n")
@@ -33,6 +35,21 @@ if ALG == 1:
                     f.write("const int inK="+str(matrixdim)+";"+"\n")
                     f.write("const int inN="+str(matrixdim)+";"+"\n")
                     f.write("#define DEVICEDIM "+str(devicedim)+"\n")
+                    f.write("#define CNN 0"+"\n")
+                    f.write("#define DECAY 0"+"\n")
+                    f.write("#define MATRIXNOR 0"+"\n")
+                    f.write("#define MATRIXEXP 0"+"\n")
+                    f.write("#define MATRIXALG 1"+"\n")
+
+                    f.write("#if DECAY"+"\n")
+                    f.write("const std::string FILENAMEA=\"a\";\n")
+                    f.write("const std::string FILENAMEB=\"b\";\n")
+                    f.write("#endif"+"\n")
+
+                    f.write("#if CNN"+"\n")
+                    f.write("const std::string FILENAMEA=\"data_cnn/conv_w_col.csv(64, 576).csv\";"+"\n")
+                    f.write("const std::string FILENAMEB=\"data_cnn/conv_X_col.csv(576, 102400).csv\";"+"\n")
+                    f.write("#endif"+"\n")
                     f.close()
                     os.system("./run.sh>>"+outfile)
         norm_file.close()

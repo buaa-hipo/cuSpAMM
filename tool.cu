@@ -166,8 +166,8 @@ void run_cublas_time(mytype* A,mytype* B){
     cublasStatus_t stat;
     cublasHandle_t handle;
     cublasCreate(&handle);
-    mytype *AA=copy_B(A,M,K);
-    mytype *BB=copy_B(B,K,N);
+    mytype *AA=copy_B2(A,M,K);
+    mytype *BB=copy_B2(B,K,N);
 
     cudaEvent_t start, stop;
     float elapsed = 0.0;
@@ -576,6 +576,27 @@ float* copy_B(mytype* B,int m,int n){
     //     }
     // }
     // MATRIXSHOW21D(b,m,n);
+    
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            #if USINGHALF
+            b[i*n+j]=__half2float(B[i*n+j]);
+            #else
+            b[i*n+j]=B[i*n+j];
+            #endif
+        }
+    }
+    
+    return b;
+
+    
+    // MATRIXSHOW21D(B,M,N);
+}
+
+//转置B矩阵
+mytype* copy_B2(mytype* B,int m,int n){
+    mytype *b;
+    cudaMallocManaged((void **)&b, sizeof(mytype)*m*n);
     
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
