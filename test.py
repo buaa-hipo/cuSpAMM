@@ -24,8 +24,8 @@ if ALG == 1:
                 line = norm_file.readline()
                 if line == '\n':
                     line = norm_file.readline()
-                for devicedim in [1,2,4,8]:
-                # for devicedim in [1]:
+                # for devicedim in [1,2,4,8]:
+                for devicedim in [1,2]:
                     f = open('para.h', 'w')
                     f.write("#define USINGHALF "+str(half)+"\n")
                     f.write("const double NormINIT="+line+";"+"\n")

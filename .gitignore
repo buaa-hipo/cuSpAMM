@@ -3,3 +3,4 @@
 /save_cluster/*
 *.csv
 main
+para.h

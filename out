@@ -1,4 +1,39 @@
-./run.sh: line 8:  6254 Segmentation fault      (core dumped) ./main
+INIT DONE--------------
+para: M=13664 K=13664 N=13664 Norm=1.000000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=0 DECAY=1
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.011488s
+cublas time=0.381604s
+***GPU ERROR checking***
+EF=151.174713 CF=755.729370 C'F=677.196472
+***counting valid***
+valid mul=198975, simple mul=77854483, rate=0.255573% aveNorm=0.013208
+single
+
+
+INIT DONE--------------
+para: M=13664 K=13664 N=13664 Norm=1.000000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=0 DECAY=1
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.012453s
+cublas time=0.382406s
+***GPU ERROR checking***
+EF=151.984238 CF=755.729370 C'F=676.762024
+***counting valid***
+valid mul=198804, simple mul=77854483, rate=0.255353% aveNorm=0.013197
+single
+
+
+INIT DONE--------------
+para: M=13664 K=13664 N=13664 Norm=0.010000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=0 DECAY=1
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.106614s
+cublas time=0.382399s
+***GPU ERROR checking***
+EF=1.492293 CF=755.729370 C'F=755.352295
+***counting valid***
+valid mul=4071203, simple mul=77854483, rate=5.229247% aveNorm=0.013208
 single
 
 

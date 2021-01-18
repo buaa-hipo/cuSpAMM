@@ -7,7 +7,7 @@ nvcc -O3 -o main tool.cu $name.cu -w -arch sm_70  -lcublas --std=c++11 -Xcompile
 # cuda-memcheck main
 # nvprof ./main
 #./main > out
-CUDA_VISIBLE_DEVICES=0 ./main
+./main
 # ./main 
 # sudo nvprof --metrics achieved_occupancy  ./main
 echo $name
