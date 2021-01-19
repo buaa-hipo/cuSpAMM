@@ -1,4 +1,6 @@
 #include "main.h"
+#include <cublasXt.h>
+#include <cuda_runtime.h>
 extern float Norm;
 
 #define COUNTERRTRANS(A,B,m,n) \
@@ -162,10 +164,29 @@ void run_cublas_time(mytype* A,mytype* B){
 
     cudaMallocHost((void **)&C, sizeof(float)*M*N);
     
-    //矩阵乘
-    cublasStatus_t stat;
-    cublasHandle_t handle;
-    cublasCreate(&handle);
+    //单机矩阵乘
+    // cublasStatus_t stat;
+    // cublasHandle_t handle;
+    // cublasCreate(&handle);
+
+    cublasStatus_t status;
+    cublasXtHandle_t handle;
+    int devices[DEVICEDIM];
+    int num_of_devices = DEVICEDIM;
+    for(int i=0;i<DEVICEDIM;i++){
+        devices[i]=i;
+    }
+
+    
+    cudaDeviceProp deviceProp;
+    printf("Using %d GPUs\n", num_of_devices);
+    for (int i = 0; i < num_of_devices; i++) {
+        cudaGetDeviceProperties(&deviceProp, devices[i]);
+        // printf("GPU ID = %d, Name = %s \n", devices[i], deviceProp.name);
+    }
+
+    status = cublasXtCreate(&handle);
+    status = cublasXtDeviceSelect(handle,num_of_devices, devices);
     mytype *AA=copy_B2(A,M,K);
     mytype *BB=copy_B2(B,K,N);
 
@@ -178,10 +199,16 @@ void run_cublas_time(mytype* A,mytype* B){
         cudaEventCreate(&stop);
         cudaEventRecord(start, 0);
 
+
+        // #if !USINGHALF
+        // cublasSgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
+        // #else
+        // cublasHgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
+        // #endif
         #if !USINGHALF
-        cublasSgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
+        cublasXtSgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
         #else
-        cublasHgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
+        // cublasHgemm(handle, CUBLAS_OP_T, CUBLAS_OP_T, m, n, k, alpha, AA, k, BB, n, beta, C, m); 
         #endif
         cudaDeviceSynchronize();
 
@@ -283,11 +310,12 @@ void getMatrixFromMTX(mytype* A,int m,int n,std::string filename){
         scol >> col;
         sval << Waypoints[2];
         sval >> val;
+        // if(row>=m) printf("%d %d %d %d\n",row,col,m,n);
         
         #if !USINGHALF
-        A[row*n+col] = val;
+        A[(row-1)*n+(col-1)] = val;
         #else
-        A[row*n+col] = __float2half(val);
+        A[(row-1)*n+(col-1)] = __float2half(val);
         #endif
 
         i++;
@@ -319,6 +347,7 @@ void getMatrixFromCSV(mytype* A,int m,int n,std::string filename){
             x_str = Waypoints[j];
             sx << x_str;
             sx >> x;
+            // printf("%f\n",x);
             
             #if !USINGHALF
             A[i*n+j] = x;
