@@ -1,0 +1,521 @@
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.100000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000496s
+cublas single time=0.000728
+***GPU ERROR checking***
+EF=0.438899 CF=359.398102 C'F=359.397827
+***counting valid***
+valid mul=54244, simple mul=57600, rate=94.173607% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.100000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000304s
+cublas single time=0.000731
+***GPU ERROR checking***
+EF=0.438899 CF=359.398102 C'F=359.397827
+***counting valid***
+valid mul=54244, simple mul=57600, rate=94.173607% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.100000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000342s
+cublas single time=0.000731
+***GPU ERROR checking***
+EF=0.438899 CF=359.398102 C'F=359.397827
+***counting valid***
+valid mul=54244, simple mul=57600, rate=94.173607% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.100000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000669s
+cublas single time=0.000728
+***GPU ERROR checking***
+EF=342.798370 CF=359.398102 C'F=69.240814
+***counting valid***
+valid mul=6927, simple mul=57600, rate=12.026042% aveNorm=0.494286
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.050000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000502s
+cublas single time=0.000729
+***GPU ERROR checking***
+EF=0.186031 CF=359.398102 C'F=359.397949
+***counting valid***
+valid mul=55548, simple mul=57600, rate=96.437500% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.050000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000306s
+cublas single time=0.000730
+***GPU ERROR checking***
+EF=0.186031 CF=359.398102 C'F=359.397949
+***counting valid***
+valid mul=55548, simple mul=57600, rate=96.437500% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.050000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000339s
+cublas single time=0.000730
+***GPU ERROR checking***
+EF=0.186031 CF=359.398102 C'F=359.397949
+***counting valid***
+valid mul=55548, simple mul=57600, rate=96.437500% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=0.050000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000669s
+cublas single time=0.000731
+***GPU ERROR checking***
+EF=342.798370 CF=359.398102 C'F=69.241333
+***counting valid***
+valid mul=7109, simple mul=57600, rate=12.342014% aveNorm=0.494286
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=2.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000446s
+cublas single time=0.000729
+***GPU ERROR checking***
+EF=32.991150 CF=359.398102 C'F=353.491608
+***counting valid***
+valid mul=44184, simple mul=57600, rate=76.708336% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=2.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000282s
+cublas single time=0.000729
+***GPU ERROR checking***
+EF=32.991150 CF=359.398102 C'F=353.491608
+***counting valid***
+valid mul=44184, simple mul=57600, rate=76.708336% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=2.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000337s
+cublas single time=0.000731
+***GPU ERROR checking***
+EF=32.991150 CF=359.398102 C'F=353.491608
+***counting valid***
+valid mul=44184, simple mul=57600, rate=76.708336% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=2.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000712s
+cublas single time=0.000730
+***GPU ERROR checking***
+EF=343.092682 CF=359.398102 C'F=67.940941
+***counting valid***
+valid mul=5383, simple mul=57600, rate=9.345486% aveNorm=0.494286
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=3.000000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000420s
+cublas single time=0.000730
+***GPU ERROR checking***
+EF=53.151665 CF=359.398102 C'F=345.943207
+***counting valid***
+valid mul=39640, simple mul=57600, rate=68.819443% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=3.000000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000273s
+cublas single time=0.000728
+***GPU ERROR checking***
+EF=53.151665 CF=359.398102 C'F=345.943207
+***counting valid***
+valid mul=39640, simple mul=57600, rate=68.819443% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=3.000000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000345s
+cublas single time=0.000730
+***GPU ERROR checking***
+EF=53.151665 CF=359.398102 C'F=345.943207
+***counting valid***
+valid mul=39640, simple mul=57600, rate=68.819443% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=3.000000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000666s
+cublas single time=0.000731
+***GPU ERROR checking***
+EF=343.483856 CF=359.398102 C'F=66.720161
+***counting valid***
+valid mul=4745, simple mul=57600, rate=8.237847% aveNorm=0.494286
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=4.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000311s
+cublas single time=0.000732
+***GPU ERROR checking***
+EF=126.542107 CF=359.398102 C'F=306.389679
+***counting valid***
+valid mul=24337, simple mul=57600, rate=42.251736% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=4.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000215s
+cublas single time=0.000731
+***GPU ERROR checking***
+EF=126.542107 CF=359.398102 C'F=306.389679
+***counting valid***
+valid mul=24337, simple mul=57600, rate=42.251736% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=4.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000336s
+cublas single time=0.000728
+***GPU ERROR checking***
+EF=126.542107 CF=359.398102 C'F=306.389679
+***counting valid***
+valid mul=24337, simple mul=57600, rate=42.251736% aveNorm=4.311368
+single
+
+
+INIT DONE------------
+para: M=128 K=576 N=25600 Norm=4.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000660s
+cublas single time=0.000729
+***GPU ERROR checking***
+EF=346.593658 CF=359.398102 C'F=58.794006
+***counting valid***
+valid mul=2340, simple mul=57600, rate=4.062500% aveNorm=0.494286
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=2.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000449s
+cublas single time=0.003490
+***GPU ERROR checking***
+EF=27.628550 CF=474.747131 C'F=469.158447
+***counting valid***
+valid mul=53349, simple mul=57600, rate=92.619797% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=2.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000242s
+cublas single time=0.003491
+***GPU ERROR checking***
+EF=27.628550 CF=474.747131 C'F=469.158447
+***counting valid***
+valid mul=53349, simple mul=57600, rate=92.619797% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=2.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000225s
+cublas single time=0.003492
+***GPU ERROR checking***
+EF=27.628550 CF=474.747131 C'F=469.158447
+***counting valid***
+valid mul=53349, simple mul=57600, rate=92.619797% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=2.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000433s
+cublas single time=0.003492
+***GPU ERROR checking***
+EF=27.628550 CF=474.747131 C'F=469.158447
+***counting valid***
+valid mul=53349, simple mul=57600, rate=92.619797% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=3.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000386s
+cublas single time=0.003489
+***GPU ERROR checking***
+EF=81.507233 CF=474.747131 C'F=439.495850
+***counting valid***
+valid mul=42232, simple mul=57600, rate=73.319450% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=3.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000223s
+cublas single time=0.003492
+***GPU ERROR checking***
+EF=81.507233 CF=474.747131 C'F=439.495850
+***counting valid***
+valid mul=42232, simple mul=57600, rate=73.319450% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=3.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000222s
+cublas single time=0.003487
+***GPU ERROR checking***
+EF=81.507233 CF=474.747131 C'F=439.495850
+***counting valid***
+valid mul=42232, simple mul=57600, rate=73.319450% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=3.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000437s
+cublas single time=0.003493
+***GPU ERROR checking***
+EF=81.507233 CF=474.747131 C'F=439.495850
+***counting valid***
+valid mul=42232, simple mul=57600, rate=73.319450% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=4.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000318s
+cublas single time=0.003492
+***GPU ERROR checking***
+EF=139.683823 CF=474.747131 C'F=400.542389
+***counting valid***
+valid mul=31835, simple mul=57600, rate=55.269096% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=4.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000199s
+cublas single time=0.003492
+***GPU ERROR checking***
+EF=139.683823 CF=474.747131 C'F=400.542389
+***counting valid***
+valid mul=31835, simple mul=57600, rate=55.269096% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=4.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000223s
+cublas single time=0.003490
+***GPU ERROR checking***
+EF=139.683823 CF=474.747131 C'F=400.542389
+***counting valid***
+valid mul=31835, simple mul=57600, rate=55.269096% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=4.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000435s
+cublas single time=0.003484
+***GPU ERROR checking***
+EF=139.683823 CF=474.747131 C'F=400.542389
+***counting valid***
+valid mul=31835, simple mul=57600, rate=55.269096% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=5.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000258s
+cublas single time=0.003493
+***GPU ERROR checking***
+EF=206.500015 CF=474.747131 C'F=351.411774
+***counting valid***
+valid mul=22738, simple mul=57600, rate=39.475693% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=5.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000177s
+cublas single time=0.003487
+***GPU ERROR checking***
+EF=206.500015 CF=474.747131 C'F=351.411774
+***counting valid***
+valid mul=22738, simple mul=57600, rate=39.475693% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=5.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000221s
+cublas single time=0.003487
+***GPU ERROR checking***
+EF=206.500015 CF=474.747131 C'F=351.411774
+***counting valid***
+valid mul=22738, simple mul=57600, rate=39.475693% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=5.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000436s
+cublas single time=0.003491
+***GPU ERROR checking***
+EF=206.500015 CF=474.747131 C'F=351.411774
+***counting valid***
+valid mul=22738, simple mul=57600, rate=39.475693% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=7.500000 DEVICE=1 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000143s
+cublas single time=0.003491
+***GPU ERROR checking***
+EF=348.122925 CF=474.747131 C'F=223.753464
+***counting valid***
+valid mul=7782, simple mul=57600, rate=13.510416% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=7.500000 DEVICE=2 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000137s
+cublas single time=0.003497
+***GPU ERROR checking***
+EF=348.122925 CF=474.747131 C'F=223.753464
+***counting valid***
+valid mul=7782, simple mul=57600, rate=13.510416% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=7.500000 DEVICE=4 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000219s
+cublas single time=0.003485
+***GPU ERROR checking***
+EF=348.122925 CF=474.747131 C'F=223.753464
+***counting valid***
+valid mul=7782, simple mul=57600, rate=13.510416% aveNorm=5.119246
+single
+
+
+INIT DONE------------
+para: M=256 K=1152 N=6400 Norm=7.500000 DEVICE=8 PARTS=1 
+ALG=0 EXP=0 CNN=1 DECAY=0
+TUNINGFLAG=0 ExpectedRate=0.750000 TUNINGTIME=20 TUNINGERROR=0.010000
+spammm time=0.000430s
+cublas single time=0.003497
+***GPU ERROR checking***
+EF=348.122925 CF=474.747131 C'F=223.753464
+***counting valid***
+valid mul=7782, simple mul=57600, rate=13.510416% aveNorm=5.119246
+single
+
+
+END
