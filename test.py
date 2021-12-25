@@ -9,12 +9,12 @@ flag=0
 
 
 if ALG == 1:
-    # for half in [0,1]:
-    for half in [0]:
+    for half in [0,1]:
+    # for half in [0]:
         if half==0:
-            outfile = 'cf_alg_FP32_MUL'
+            outfile = 'out-float'
         else:
-            outfile = 'a100_alg_FP16_MUL'
+            outfile = 'out-half'
         fo = open(outfile, 'w')
         fo.close()
         norm_file = open('normALG', 'r')

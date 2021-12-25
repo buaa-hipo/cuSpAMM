@@ -12,12 +12,12 @@ matrixdim=13656
 #     print(file)
 
 if 1:
-    # for half in [0,1]:
-    for half in [0]:
+    for half in [0,1]:
+    # for half in [0]:
         if half==0:
-            outfile = 'out'
+            outfile = 'out-half'
         else:
-            outfile = 'out'
+            outfile = 'out-float'
         fo = open(outfile, 'w')
         fo.close()
         for file in os.listdir("data_decay"):
@@ -25,8 +25,9 @@ if 1:
             matrixdim=file.split("_")[-1].split(".mtx")[0]
             # print(matrixdim)
             for i in range(0, 6):
-                # for devicedim in [1,2,4,8]:
-                for devicedim in [1,2]:
+            # for i in range(0, 1):
+                for devicedim in [1,2,4,8]:
+                # for devicedim in [1,2]:
                     f = open('para.h', 'w')
                     f.write("#define USINGHALF "+str(half)+"\n")
                     f.write("const double NormINIT="+str(E[i])+";"+"\n")

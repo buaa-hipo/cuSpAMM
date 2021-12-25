@@ -1,30 +1,20 @@
 #define USINGHALF 0
-<<<<<<< HEAD
-const double NormINIT=0.01;
-#define TESTTIME 20
-#define WARMUP 3
-const int inM=13656;
-const int inK=13656;
-const int inN=13656;
-#define DEVICEDIM 2
-=======
-const double NormINIT=0.92 
+const double NormINIT=1.48
 ;
 #define TESTTIME 20
 #define WARMUP 3
-const int inM=32768;
-const int inK=32768;
-const int inN=32768;
-#define DEVICEDIM 1
->>>>>>> d60a1185cffc63aea87fdd2c9f5cd4fbfe107d83
+const int inM=1024;
+const int inK=1024;
+const int inN=1024;
+#define DEVICEDIM 2
 #define CNN 0
-#define DECAY 1
+#define DECAY 0
 #define MATRIXNOR 0
 #define MATRIXEXP 0
-#define MATRIXALG 0
+#define MATRIXALG 1
 #if DECAY
-const std::string FILENAMEA="data_decay/S_matrix_13656.mtx";
-const std::string FILENAMEB="data_decay/S_matrix_13656.mtx";
+const std::string FILENAMEA="a";
+const std::string FILENAMEB="b";
 #endif
 #if CNN
 const std::string FILENAMEA="data_cnn/conv_w_col.csv(64, 576).csv";
