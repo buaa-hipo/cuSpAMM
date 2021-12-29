@@ -1,0 +1,7 @@
+/data_cnn/*
+/data_decay/*
+/save_cluster/*
+.vscode/*
+*.csv
+main
+cusparse
