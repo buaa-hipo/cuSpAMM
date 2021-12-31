@@ -1,12 +1,12 @@
 #define USINGHALF 0
-const double NormINIT=1.48
+const double NormINIT=1.222891
 ;
-#define TESTTIME 20
-#define WARMUP 3
-const int inM=1024;
-const int inK=1024;
-const int inN=1024;
-#define DEVICEDIM 2
+#define TESTTIME 1
+#define WARMUP 0
+const int inM=4096;
+const int inK=4096;
+const int inN=4096;
+#define DEVICEDIM 1
 #define CNN 0
 #define DECAY 0
 #define MATRIXNOR 0

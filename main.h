@@ -49,7 +49,7 @@ const double ExpectedRate = 0.75;
 #define TRUNCATIONNUM 0.030
 
 #define SpAMM 1
-#define CUBLAS 1
+#define CUBLAS 0
 
 const int M = ((inM-1)/LoNum+1) * LoNum;
 const int K = ((inK-1)/LoNum+1) * LoNum;
