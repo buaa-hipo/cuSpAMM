@@ -1,0 +1,6 @@
+/data_cnn/*
+/data_decay/*
+/save_cluster/*
+*.csv
+main
+para.h
