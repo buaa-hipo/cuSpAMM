@@ -514,6 +514,7 @@ int main(int argc, char **argv){
         cudaEventCreate(&start);
         cudaEventCreate(&stop);
         cudaEventRecord(start, 0);
+        
         const int partBlockOffset=M/LoNum/PART; //所有行分P次算
         int C_blocks = M*N/(LoNum*LoNum),C_threads=LoNum*LoNum;
         int A_blocks = M*K/(LoNum*LoNum),B_blocks = (K*N)/(LoNum*LoNum),F_threads = LoNum*LoNum;

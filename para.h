@@ -1,11 +1,13 @@
-#define USINGHALF 0
-const double NormINIT=1.222891
-;
+#define USINGHALF 1
+const double NormINIT=1.222981;
 #define TESTTIME 1
 #define WARMUP 0
 const int inM=4096;
 const int inK=4096;
 const int inN=4096;
+// const int inM=32768;
+// const int inK=32768;
+// const int inN=32768;
 #define DEVICEDIM 1
 #define CNN 0
 #define DECAY 0

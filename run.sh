@@ -1,5 +1,5 @@
-# name=dynamic
-name=single
+# name=single
+name=ablation
 #nvcc -O3 -o main tool.cu $name.cu -w -arch sm_70 #80
 nvcc -O3 -o main tool.cu $name.cu -w -arch sm_70  -lcublas --std=c++11 -Xcompiler -fopenmp
 # nvcc -O3 -o main $name.cu -w -arch sm_70  -lcublas --std=c++11 -Xcompiler -fopenmp
